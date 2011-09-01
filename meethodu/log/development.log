@@ -450,3 +450,88 @@ Started GET "/test_products" for 127.0.0.1 at Wed Aug 31 01:01:11 -0700 2011
   [1m[36mTestProduct Load (0.5ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
 Rendered test_products/index.html.erb within layouts/application (3.9ms)
 Completed 200 OK in 38ms (Views: 8.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/test_products" for 127.0.0.1 at Thu Sep 01 00:18:13 -0700 2011
+  Processing by TestProductsController#index as HTML
+  [1m[36mTestProduct Load (0.5ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
+Rendered test_products/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 35ms (Views: 7.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/google.com" for 127.0.0.1 at Thu Sep 01 00:18:56 -0700 2011
+
+ActionController::RoutingError (No route matches "/google.com"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/test_products" for 127.0.0.1 at Thu Sep 01 00:24:20 -0700 2011
+  Processing by TestProductsController#index as HTML
+  [1m[36mTestProduct Load (0.6ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
+Rendered test_products/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 39ms (Views: 8.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/test_products" for 127.0.0.1 at Thu Sep 01 00:25:59 -0700 2011
+  Processing by TestProductsController#index as HTML
+  [1m[36mTestProduct Load (0.4ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
+Rendered test_products/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 34ms (Views: 7.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/test_products" for 127.0.0.1 at Thu Sep 01 00:29:56 -0700 2011
+  Processing by TestProductsController#index as HTML
+  [1m[36mTestProduct Load (0.4ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
+Rendered test_products/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 35ms (Views: 8.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/test_products" for 127.0.0.1 at Thu Sep 01 00:31:38 -0700 2011
+  Processing by TestProductsController#index as HTML
+  [1m[36mTestProduct Load (0.5ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
+Rendered test_products/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 35ms (Views: 7.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/test_products" for 127.0.0.1 at Thu Sep 01 00:34:31 -0700 2011
+  Processing by TestProductsController#index as HTML
+  [1m[36mTestProduct Load (0.5ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
+Rendered test_products/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 36ms (Views: 7.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/test_products" for 127.0.0.1 at Thu Sep 01 00:40:38 -0700 2011
+  Processing by TestProductsController#index as HTML
+  [1m[36mTestProduct Load (0.5ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
+Rendered test_products/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 34ms (Views: 7.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/test_products" for 127.0.0.1 at Thu Sep 01 00:41:40 -0700 2011
+  Processing by TestProductsController#index as HTML
+  [1m[36mTestProduct Load (0.4ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
+Rendered test_products/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 36ms (Views: 9.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/test_products" for 127.0.0.1 at Thu Sep 01 00:48:34 -0700 2011
+  Processing by TestProductsController#index as HTML
+  [1m[36mTestProduct Load (0.7ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
+Rendered test_products/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 38ms (Views: 7.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/test_products" for 127.0.0.1 at Thu Sep 01 00:52:43 -0700 2011
+  Processing by TestProductsController#index as HTML
+  [1m[36mTestProduct Load (0.5ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
+Rendered test_products/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 35ms (Views: 8.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/test_products" for 127.0.0.1 at Thu Sep 01 00:55:51 -0700 2011
+  Processing by TestProductsController#index as HTML
+  [1m[36mTestProduct Load (0.5ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
+Rendered test_products/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 37ms (Views: 7.5ms | ActiveRecord: 0.5ms)
