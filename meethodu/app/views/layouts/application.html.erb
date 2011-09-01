@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Meethodu</title>
-  <%= stylesheet_link_tag :all %>
+  <title>Meethodu - Help and Receive from your friends</title>
+  <%= stylesheet_link_tag "scaffold" %>
+  <%= stylesheet_link_tag "meethodu", :media => "all" %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
-<body>
+<body id="mee_body">
+	<div id="mee_banner">
+		<%= image_tag("meethodu_tree_logo_small.png") %>
+		<%= "Social Revolution" %>
+	</div>
+	<div id="mee_banner_under_line">
+	</div>
 
-<%= yield %>
-
+	<div id="mee_main">
+		<%= yield %>
+	</div>
+		<div id="mee_footer_list_faq">
+			<li>
+				<a href="google.com">How Does it work? </a>
+			</li>
+			<li>
+				<a href="google.com">Why are you doing this? </a>
+			</li>
+			<li>
+				<a href="google.com">Does it really work? </a>
+			</li>
+		</div>
+		<div id="mee_footer_list_holder"></div>
+		<div id="mee_footer_list_contacts">
+			<li>
+				<a href="google.com">About us</a>
+			</li>
+			<li>
+				<a href="google.com">Contact us</a>
+			</li>
+			<li>
+				<a href="google.com">Does it really work? </a>
+			</li>
+		</div>
 </body>
 </html>
