@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  friend1_id: 1
+  friend2_id: 1
+  begin_date: 2011-09-01
+  how_do_you_know: MyString
+
+two:
+  friend1_id: 1
+  friend2_id: 1
+  begin_date: 2011-09-01
+  how_do_you_know: MyString

@@ -535,3 +535,247 @@ Started GET "/test_products" for 127.0.0.1 at Thu Sep 01 00:55:51 -0700 2011
   [1m[36mTestProduct Load (0.5ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
 Rendered test_products/index.html.erb within layouts/application (3.6ms)
 Completed 200 OK in 37ms (Views: 7.5ms | ActiveRecord: 0.5ms)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTestProducts (20110831051521)
+Migrating to CreateUsers (20110902052025)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.0ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "last_name" varchar(255), "gender" varchar(255), "address_line1" varchar(255), "address_line2" varchar(255), "city" varchar(255), "state" varchar(255), "zipcode" integer, "user_id" varchar(255), "about_me" text, "interests" text, "date_of_birth" date, "area_code" varchar(255), "phone_number" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110902052025')
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("test_products")
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("users")[0m
+
+
+Started GET "/test_products" for 127.0.0.1 at Thu Sep 01 22:26:03 -0700 2011
+  Processing by TestProductsController#index as HTML
+  [1m[36mTestProduct Load (0.5ms)[0m  [1mSELECT "test_products".* FROM "test_products"[0m
+Rendered test_products/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 71ms (Views: 19.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Sep 01 22:26:07 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 17ms (Views: 10.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Thu Sep 01 22:26:15 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (121.9ms)
+Rendered users/new.html.erb within layouts/application (127.0ms)
+Completed 200 OK in 138ms (Views: 132.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at Thu Sep 01 22:26:35 -0700 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user"=>{"city"=>"", "interests"=>"", "about_me"=>"", "zipcode"=>"", "gender"=>"", "user_id"=>"", "last_name"=>"", "address_line1"=>"", "first_name"=>"test1", "address_line2"=>"", "state"=>""}}
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "users" ("first_name", "zipcode", "updated_at", "interests", "last_name", "user_id", "about_me", "state", "address_line1", "phone_number", "gender", "address_line2", "created_at", "city", "area_code", "date_of_birth") VALUES ('test1', NULL, '2011-09-02 05:26:35.614494', '', '', '', '', '', '', NULL, '', '', '2011-09-02 05:26:35.614494', '', NULL, NULL)
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 69ms
+
+
+Started GET "/users/1" for 127.0.0.1 at Thu Sep 01 22:26:35 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 34ms (Views: 24.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Sep 01 22:26:38 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (57.3ms)
+Completed 200 OK in 70ms (Views: 62.9ms | ActiveRecord: 0.5ms)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTestProducts (20110831051521)
+Migrating to CreateUsers (20110902052025)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("test_products")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+
+
+Started GET "/users" for 127.0.0.1 at Thu Sep 01 22:35:56 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 58ms (Views: 28.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Thu Sep 01 22:35:59 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (69.7ms)
+Rendered users/new.html.erb within layouts/application (74.2ms)
+Completed 200 OK in 86ms (Views: 79.8ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTestProducts (20110831051521)
+Migrating to CreateUsers (20110902052025)
+Migrating to CreateFriendships (20110902061847)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TABLE "friendships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "friend1_id" integer, "friend2_id" integer, "begin_date" date, "how_do_you_know" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110902061847')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("friendships")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("test_products")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/friendships" for 127.0.0.1 at Thu Sep 01 23:19:07 -0700 2011
+  Processing by FriendshipsController#index as HTML
+  [1m[35mFriendship Load (0.5ms)[0m  SELECT "friendships".* FROM "friendships"
+Rendered friendships/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 16ms (Views: 9.7ms | ActiveRecord: 0.5ms)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTestProducts (20110831051521)
+Migrating to CreateUsers (20110902052025)
+Migrating to CreateFriendships (20110902061847)
+Migrating to CreateProjects (20110902062617)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.0ms)[0m  [1mCREATE TABLE "projects" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "summary" varchar(255), "description" text, "minimum_budget" integer, "maximum_budget" integer, "days_to_return_money" integer, "need_referral" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110902062617')
+Migrating to CreateProjectFundings (20110902063438)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "project_fundings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "receiver_id" integer, "recommender_id" integer, "donor_id" integer, "funding_date" date, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110902063438')
+Migrating to CreateReceiverRequests (20110902063713)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE TABLE "receiver_requests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "received" boolean, "received_date" date, "received_money" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110902063713')
+Migrating to CreateDonorRequests (20110902063808)
+  [1m[36mSQL (1.3ms)[0m  [1mCREATE TABLE "donor_requests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "project_id" integer, "sent" boolean, "sent_date" date, "sent_money" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110902063808')
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("donor_requests")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("friendships")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("project_fundings")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("projects")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("receiver_requests")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("test_products")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/friendships" for 127.0.0.1 at Thu Sep 01 23:43:56 -0700 2011
+  Processing by FriendshipsController#index as HTML
+  [1m[36mFriendship Load (0.8ms)[0m  [1mSELECT "friendships".* FROM "friendships"[0m
+Rendered friendships/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 38ms (Views: 7.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Sep 01 23:44:01 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (60.7ms)
+Completed 200 OK in 74ms (Views: 67.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/1/edit" for 127.0.0.1 at Thu Sep 01 23:44:14 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered users/_form.html.erb (77.6ms)
+Rendered users/edit.html.erb within layouts/application (82.9ms)
+Completed 200 OK in 95ms (Views: 86.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Thu Sep 01 23:44:26 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+Rendered projects/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 14ms (Views: 8.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Thu Sep 01 23:44:36 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.5ms)[0m  SELECT "projects".* FROM "projects"
+Rendered projects/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 14ms (Views: 8.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at Thu Sep 01 23:44:43 -0700 2011
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (63.4ms)
+Rendered projects/new.html.erb within layouts/application (69.3ms)
+Completed 200 OK in 80ms (Views: 73.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/google.com" for 127.0.0.1 at Thu Sep 01 23:45:16 -0700 2011
+
+ActionController::RoutingError (No route matches "/google.com"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at Thu Sep 01 23:45:29 -0700 2011
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (59.2ms)
+Rendered projects/new.html.erb within layouts/application (63.8ms)
+Completed 200 OK in 73ms (Views: 67.4ms | ActiveRecord: 0.0ms)

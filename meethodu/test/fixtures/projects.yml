@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  summary: MyString
+  description: MyText
+  minimum_budget: 1
+  maximum_budget: 1
+  days_to_return_money: 1
+  need_referral: false
+
+two:
+  name: MyString
+  summary: MyString
+  description: MyText
+  minimum_budget: 1
+  maximum_budget: 1
+  days_to_return_money: 1
+  need_referral: false

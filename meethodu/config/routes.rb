@@ -1,4 +1,16 @@
 Meethodu::Application.routes.draw do
+  resources :donor_requests
+
+  resources :receiver_requests
+
+  resources :project_fundings
+
+  resources :projects
+
+  resources :friendships
+
+  resources :users
+
   resources :test_products
 
   # The priority is based upon order of creation:

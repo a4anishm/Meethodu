@@ -1,0 +1,29 @@
+<h1>Listing test_products</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Image url</th>
+    <th>Price</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @test_products.each do |test_product| %>
+  <tr>
+    <td><%= test_product.title %></td>
+    <td><%= test_product.description %></td>
+    <td><%= test_product.image_url %></td>
+    <td><%= test_product.price %></td>
+    <td><%= link_to 'Show', test_product %></td>
+    <td><%= link_to 'Edit', edit_test_product_path(test_product) %></td>
+    <td><%= link_to 'Destroy', test_product, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Test product', new_test_product_path %>

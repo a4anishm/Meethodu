@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  project_id: 1
+  received: false
+  received_date: 2011-09-01
+
+two:
+  project_id: 1
+  received: false
+  received_date: 2011-09-01

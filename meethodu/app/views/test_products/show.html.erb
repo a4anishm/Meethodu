@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @test_product.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @test_product.description %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @test_product.image_url %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @test_product.price %>
+</p>
+
+
+<%= link_to 'Edit', edit_test_product_path(@test_product) %> |
+<%= link_to 'Back', test_products_path %>
