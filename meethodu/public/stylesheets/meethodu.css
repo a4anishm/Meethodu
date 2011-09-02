@@ -1,0 +1,78 @@
+#mee_banner{
+	background: #B5E61D;
+	height: 150px;
+	font: small-caps 140px/140px;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+#mee_banner img{
+	float: left;
+}
+
+#mee_banner_under_line{
+	height: 3px;
+	background: #000000;
+}
+
+#mee_main{
+	margin-right: 250px;
+	margin-left: 250px;
+}
+
+
+#mee_footer{
+	background: #000000;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font: small-caps 40px/40px ;
+}
+
+#mee_footer_list_faq{
+	background: #000000;
+	width: 50%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 0px;
+	float: left;
+	list-style-image: none;
+	list-style-image: none;
+	list-style-type: none;
+}
+
+#mee_footer_list_contacts{
+	background: #000000;
+	width: 50%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 0px;
+	float: right;
+	list-style-image: none;
+	list-style-type: none;
+}
+
+#mee_footer_list_faq li {
+list-style-image: none;
+	list-style-type: none;
+}
+
+
+#mee_footer_list_contacts li{
+list-style-image: none;
+	list-style-type: none;
+}
+
+#mee_footer_list_faq li a{
+	margin-right: 20px;
+	font: small-caps;
+	color: #B5E61D;
+	float: right;
+}
+
+#mee_footer_list_contacts li a{
+	margin-left: 20px;
+	font: small-caps;
+	color: #B5E61D;
+	float: left;
+}
+	
