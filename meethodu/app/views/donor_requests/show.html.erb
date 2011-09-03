@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Project:</b>
+  <%= @donor_request.project_id %>
+</p>
+
+<p>
+  <b>Sent:</b>
+  <%= @donor_request.sent %>
+</p>
+
+<p>
+  <b>Sent date:</b>
+  <%= @donor_request.sent_date %>
+</p>
+
+<p>
+  <b>Sent money:</b>
+  <%= @donor_request.sent_money %>
+</p>
+
+
+<%= link_to 'Edit', edit_donor_request_path(@donor_request) %> |
+<%= link_to 'Back', donor_requests_path %>

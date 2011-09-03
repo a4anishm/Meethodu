@@ -1,0 +1,27 @@
+<h1>Listing receiver_requests</h1>
+
+<table>
+  <tr>
+    <th>Project</th>
+    <th>Received</th>
+    <th>Received date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @receiver_requests.each do |receiver_request| %>
+  <tr>
+    <td><%= receiver_request.project_id %></td>
+    <td><%= receiver_request.received %></td>
+    <td><%= receiver_request.received_date %></td>
+    <td><%= link_to 'Show', receiver_request %></td>
+    <td><%= link_to 'Edit', edit_receiver_request_path(receiver_request) %></td>
+    <td><%= link_to 'Destroy', receiver_request, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Receiver request', new_receiver_request_path %>

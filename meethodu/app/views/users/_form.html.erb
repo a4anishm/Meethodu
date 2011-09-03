@@ -1,0 +1,85 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line1 %><br />
+    <%= f.text_field :address_line1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address_line2 %><br />
+    <%= f.text_field :address_line2 %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state %>
+  </div>
+  <div class="field">
+    <%= f.label :zipcode %><br />
+    <%= f.text_field :zipcode %>
+  </div>
+  <div class="field">
+  </div>
+  <div class="field">
+    <%= f.label :Email_Id %><br />
+    <%= f.text_field :email_id %>
+  </div>
+  <div class="field">
+    <%= f.label :passowrd %><br />
+    <%= f.text_field :password%>
+  </div>
+  <div class="field">
+    <%= f.label :Enter_password_again %><br />
+    <%= f.text_field :password_confirmation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Date_of_Birth %><br />
+    <%= f.date_select :date_of_birth %>
+  </div>
+  <div class="field">
+    <%= f.label :Phone_Number %><br />
+    <%= f.text_field :area_code %>
+    <%= f.text_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :Userid %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :about_me %><br />
+    <%= f.text_area :about_me, :rows => 6 %>
+  </div>
+  <div class="field">
+    <%= f.label :interests %><br />
+    <%= f.text_area :interests, :rows => 1 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

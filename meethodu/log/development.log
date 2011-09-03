@@ -779,3 +779,2249 @@ Started GET "/projects/new" for 127.0.0.1 at Thu Sep 01 23:45:29 -0700 2011
 Rendered projects/_form.html.erb (59.2ms)
 Rendered projects/new.html.erb within layouts/application (63.8ms)
 Completed 200 OK in 73ms (Views: 67.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at Fri Sep 02 14:14:08 -0700 2011
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (72.0ms)
+Rendered projects/new.html.erb within layouts/application (76.9ms)
+Completed 200 OK in 101ms (Views: 94.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 14:14:40 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 34ms (Views: 24.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 02 14:14:42 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (62.6ms)
+Rendered users/new.html.erb within layouts/application (67.2ms)
+Completed 200 OK in 79ms (Views: 71.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at Fri Sep 02 14:15:47 -0700 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user"=>{"city"=>"bapatla", "interests"=>"poultry", "about_me"=>"I prefer to work on small scale projects which are always good for me. I will raise 10 chicken and sell them for meat and egg.", "zipcode"=>"522101", "gender"=>"female", "user_id"=>"ellamma", "last_name"=>"konderapu", "address_line1"=>"narasayapalem", "first_name"=>"ellamma", "address_line2"=>"Bapatla", "state"=>"andhr apradesh"}}
+  [1m[35mAREL (0.9ms)[0m  INSERT INTO "users" ("address_line2", "date_of_birth", "about_me", "created_at", "city", "zipcode", "interests", "phone_number", "address_line1", "first_name", "user_id", "area_code", "gender", "updated_at", "state", "last_name") VALUES ('Bapatla', NULL, 'I prefer to work on small scale projects which are always good for me. I will raise 10 chicken and sell them for meat and egg.', '2011-09-02 21:15:47.707226', 'bapatla', 522101, 'poultry', NULL, 'narasayapalem', 'ellamma', 'ellamma', NULL, 'female', '2011-09-02 21:15:47.707226', 'andhr apradesh', 'konderapu')
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 37ms
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 14:15:47 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 77ms (Views: 24.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 14:15:50 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 71ms (Views: 63.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 14:15:56 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (60.8ms)
+Completed 200 OK in 73ms (Views: 64.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 14:16:00 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/show.html.erb within layouts/application (60.3ms)
+Completed 200 OK in 72ms (Views: 65.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Fri Sep 02 14:16:03 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 31ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 14:16:07 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/show.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 33ms (Views: 23.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 14:26:28 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 63ms (Views: 31.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 02 14:26:30 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (39.0ms)
+Rendered users/new.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 57ms (Views: 49.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 14:45:02 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 55ms (Views: 26.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 14:49:15 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 57ms (Views: 28.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 02 14:49:26 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (40.3ms)
+Rendered users/new.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 58ms (Views: 49.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at Fri Sep 02 14:50:19 -0700 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user"=>{"city"=>"uhuuu", "interests"=>"peda etthatam pidakalu cheyyatam", "about_me"=>"my sexy name is pullmmaa", "zipcode"=>"96398", "gender"=>"sexy", "user_id"=>"pulli", "last_name"=>"pilli", "address_line1"=>"hehe address kudana", "first_name"=>"pullamma", "address_line2"=>"aa inka challe", "state"=>"ap/telangana"}}
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "users" ("first_name", "phone_number", "address_line1", "user_id", "city", "date_of_birth", "gender", "created_at", "about_me", "address_line2", "state", "last_name", "updated_at", "zipcode", "area_code", "interests") VALUES ('pullamma', NULL, 'hehe address kudana', 'pulli', 'uhuuu', NULL, 'sexy', '2011-09-02 21:50:19.267075', 'my sexy name is pullmmaa', 'aa inka challe', 'ap/telangana', 'pilli', '2011-09-02 21:50:19.267075', 96398, NULL, 'peda etthatam pidakalu cheyyatam')[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 49ms
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 14:50:19 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/show.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 65ms (Views: 57.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 14:50:21 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (59.4ms)
+Completed 200 OK in 70ms (Views: 63.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 14:55:44 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 58ms (Views: 27.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 14:55:58 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 42ms (Views: 32.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 14:58:57 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 55ms (Views: 27.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:04:09 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 61ms (Views: 28.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Fri Sep 02 15:06:00 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 31ms (Views: 22.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 15:06:05 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/show.html.erb within layouts/application (50.3ms)
+Completed 200 OK in 62ms (Views: 54.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at Fri Sep 02 15:08:47 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/_form.html.erb (78.7ms)
+Rendered users/edit.html.erb within layouts/application (83.9ms)
+Completed 200 OK in 95ms (Views: 87.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:08:51 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 73ms (Views: 30.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 15:08:55 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (57.2ms)
+Completed 200 OK in 69ms (Views: 62.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:10:17 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (63.8ms)
+Completed 200 OK in 74ms (Views: 67.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 02 15:10:22 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (72.2ms)
+Rendered users/new.html.erb within layouts/application (77.3ms)
+Completed 200 OK in 86ms (Views: 80.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:10:35 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 83ms (Views: 75.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 02 15:10:46 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (64.9ms)
+Rendered users/new.html.erb within layouts/application (69.2ms)
+Completed 200 OK in 80ms (Views: 73.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 02 15:10:54 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (31.5ms)
+Rendered users/new.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 46ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 02 15:11:59 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (67.5ms)
+Rendered users/new.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 83ms (Views: 76.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 02 15:14:08 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (73.6ms)
+Rendered users/new.html.erb within layouts/application (78.4ms)
+Completed 200 OK in 89ms (Views: 83.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 02 15:15:08 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (66.7ms)
+Rendered users/new.html.erb within layouts/application (71.5ms)
+Completed 200 OK in 82ms (Views: 75.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:15:27 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 57ms (Views: 27.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 02 15:15:50 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (66.6ms)
+Rendered users/new.html.erb within layouts/application (71.1ms)
+Completed 200 OK in 80ms (Views: 74.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:15:54 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (64.4ms)
+Completed 200 OK in 74ms (Views: 68.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Fri Sep 02 15:16:35 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered users/show.html.erb within layouts/application (64.6ms)
+Completed 200 OK in 75ms (Views: 68.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 15:16:41 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 29ms (Views: 21.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 15:17:21 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/show.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 29ms (Views: 21.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at Fri Sep 02 15:17:24 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/_form.html.erb (29.3ms)
+Rendered users/edit.html.erb within layouts/application (34.0ms)
+Completed 200 OK in 45ms (Views: 37.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:17:38 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 31ms (Views: 25.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Fri Sep 02 15:18:19 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 27ms (Views: 20.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:18:29 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 67ms (Views: 24.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 15:18:31 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 65ms (Views: 58.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:18:57 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (60.5ms)
+Completed 200 OK in 70ms (Views: 65.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 15:21:51 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 63ms (Views: 56.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at Fri Sep 02 15:21:53 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/_form.html.erb (84.0ms)
+Rendered users/edit.html.erb within layouts/application (90.6ms)
+Completed 200 OK in 101ms (Views: 94.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:21:56 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (69.5ms)
+Completed 200 OK in 80ms (Views: 73.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 15:22:05 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/show.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 29ms (Views: 21.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:22:07 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 30ms (Views: 23.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 02 15:22:09 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (62.6ms)
+Rendered users/new.html.erb within layouts/application (67.6ms)
+Completed 200 OK in 77ms (Views: 71.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:22:15 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 30ms (Views: 23.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:33:24 -0700 2011
+  Processing by UsersController#index as HTML
+Completed   in 5ms
+
+SyntaxError (/home/invinc/work/meethodu/anish-test-code/meethodu/app/models/user.rb:3: syntax error, unexpected '{', expecting kEND
+...user_id, :uniqueness => true {:message => 'Userid already ta...
+                              ^
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/models/user.rb:3: syntax error, unexpected '}', expecting kEND):
+  app/controllers/users_controller.rb:5:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:33:56 -0700 2011
+  Processing by UsersController#index as HTML
+Completed   in 7ms
+
+ArgumentError (Unknown validator: 'message'):
+  app/models/user.rb:3
+  app/controllers/users_controller.rb:5:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:34:15 -0700 2011
+  Processing by UsersController#index as HTML
+Completed   in 41ms
+
+SyntaxError (/home/invinc/work/meethodu/anish-test-code/meethodu/app/models/user.rb:3: syntax error, unexpected '\n', expecting tASSOC):
+  app/controllers/users_controller.rb:5:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:35:35 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 32ms (Views: 23.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 15:35:39 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/show.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 33ms (Views: 24.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at Fri Sep 02 15:35:42 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/_form.html.erb (29.4ms)
+Rendered users/edit.html.erb within layouts/application (34.4ms)
+Completed 200 OK in 50ms (Views: 40.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/2" for 127.0.0.1 at Fri Sep 02 15:35:46 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"2", "user"=>{"city"=>"bapatla", "interests"=>"poultry", "about_me"=>"I prefer to work on small scale projects which are always good for me. I will raise 10 chicken and sell them for meat and egg.", "zipcode"=>"522101", "gender"=>"female", "user_id"=>"ellamma", "last_name"=>"konderapu", "address_line1"=>"narasayapalem", "first_name"=>"ellamma", "address_line2"=>"Bapatla", "state"=>"andhr apradesh"}}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Completed   in 22ms
+
+NoMethodError (undefined method `aboutme' for #<User:0xb601dfa4>):
+  app/controllers/users_controller.rb:62
+  app/controllers/users_controller.rb:61:in `update'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 15:36:21 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 67ms (Views: 58.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at Fri Sep 02 15:36:23 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/_form.html.erb (65.7ms)
+Rendered users/edit.html.erb within layouts/application (121.4ms)
+Completed 200 OK in 137ms (Views: 126.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/2" for 127.0.0.1 at Fri Sep 02 15:36:25 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"2", "user"=>{"city"=>"bapatla", "interests"=>"poultry", "about_me"=>"I prefer to work on small scale projects which are always good for me. I will raise 10 chicken and sell them for meat and egg.", "zipcode"=>"522101", "gender"=>"female", "user_id"=>"ellamma", "last_name"=>"konderapu", "address_line1"=>"narasayapalem", "first_name"=>"ellamma", "address_line2"=>"Bapatla", "state"=>"andhr apradesh"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."user_id" = 'ellamma') AND ("users".id <> 2) LIMIT 1
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 94ms
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 15:36:25 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 32ms (Views: 23.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:36:30 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 31ms (Views: 21.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 15:36:32 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 31ms (Views: 22.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at Fri Sep 02 15:36:35 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/_form.html.erb (29.4ms)
+Rendered users/edit.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 87ms (Views: 41.2ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users/2" for 127.0.0.1 at Fri Sep 02 15:36:40 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"2", "user"=>{"city"=>"bapatla", "interests"=>"poultry", "about_me"=>"I prefer to work on small scale projects which are always good for me. I will raise 10 chicken and sell them for meat and egg.", "zipcode"=>"522101", "gender"=>"female", "user_id"=>"ellamma", "last_name"=>"konderapu", "address_line1"=>"narasayapalem", "first_name"=>"ellamma", "address_line2"=>"Bapatla", "state"=>"andhr apradesh"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."user_id" = 'ellamma') AND ("users".id <> 2) LIMIT 1
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 27ms
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 15:36:40 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (52.1ms)
+Completed 200 OK in 64ms (Views: 56.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:36:42 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 39ms (Views: 22.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 15:36:45 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 30ms (Views: 20.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at Fri Sep 02 15:36:46 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/_form.html.erb (30.4ms)
+Rendered users/edit.html.erb within layouts/application (35.0ms)
+Completed 200 OK in 51ms (Views: 38.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/3" for 127.0.0.1 at Fri Sep 02 15:36:53 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"3", "user"=>{"city"=>"uhuuu", "interests"=>"peda etthatam pidakalu cheyyatam", "about_me"=>"my sexy name is pullmmaa", "zipcode"=>"96398", "gender"=>"sexy", "user_id"=>"ellamma", "last_name"=>"pilli", "address_line1"=>"hehe address kudana", "first_name"=>"pullamma", "address_line2"=>"aa inka challe", "state"=>"ap/telangana"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."user_id" = 'ellamma') AND ("users".id <> 3) LIMIT 1
+Rendered users/_form.html.erb (15.9ms)
+Rendered users/edit.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 51ms (Views: 26.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/3" for 127.0.0.1 at Fri Sep 02 15:37:32 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"3", "user"=>{"city"=>"uhuuu", "interests"=>"peda etthatam pidakalu cheyyatam", "about_me"=>"my sexy name is pullmmaa", "zipcode"=>"", "gender"=>"sexy", "user_id"=>"pullamma", "last_name"=>"pilli", "address_line1"=>"hehe address kudana", "first_name"=>"pullamma", "address_line2"=>"aa inka challe", "state"=>"ap/telangana"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."user_id" = 'pullamma') AND ("users".id <> 3) LIMIT 1
+Rendered users/_form.html.erb (16.1ms)
+Rendered users/edit.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 52ms (Views: 24.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:37:44 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 71ms (Views: 27.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 15:37:46 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/show.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 69ms (Views: 60.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 15:37:50 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (63.2ms)
+Completed 200 OK in 74ms (Views: 67.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 15:40:06 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/show.html.erb within layouts/application (60.3ms)
+Completed 200 OK in 72ms (Views: 63.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at Fri Sep 02 15:40:09 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/_form.html.erb (78.1ms)
+Rendered users/edit.html.erb within layouts/application (83.4ms)
+Completed 200 OK in 96ms (Views: 87.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/friendships" for 127.0.0.1 at Fri Sep 02 16:02:35 -0700 2011
+  Processing by FriendshipsController#index as HTML
+Completed   in 4ms
+
+SyntaxError (/home/invinc/work/meethodu/anish-test-code/meethodu/app/models/friendship.rb:4: syntax error, unexpected kEND):
+  app/controllers/friendships_controller.rb:5:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.8ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at Fri Sep 02 16:03:05 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/_form.html.erb (84.1ms)
+Rendered users/edit.html.erb within layouts/application (89.4ms)
+Completed 200 OK in 102ms (Views: 93.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/friendships" for 127.0.0.1 at Fri Sep 02 16:03:23 -0700 2011
+  Processing by FriendshipsController#index as HTML
+  [1m[36mFriendship Load (0.5ms)[0m  [1mSELECT "friendships".* FROM "friendships"[0m
+Rendered friendships/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 17ms (Views: 9.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/friendships/new" for 127.0.0.1 at Fri Sep 02 16:03:25 -0700 2011
+  Processing by FriendshipsController#new as HTML
+Rendered friendships/_form.html.erb (18.0ms)
+Rendered friendships/new.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/friendships" for 127.0.0.1 at Fri Sep 02 16:03:52 -0700 2011
+  Processing by FriendshipsController#create as HTML
+  Parameters: {"commit"=>"Create Friendship", "friendship"=>{"begin_date(1i)"=>"2011", "begin_date(2i)"=>"9", "begin_date(3i)"=>"2", "friend1_id"=>"ellamma", "how_do_you_know"=>"pullamma met me while cleaning restrooms", "friend2_id"=>"alluri"}, "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223"}
+  [1m[35mAREL (0.9ms)[0m  INSERT INTO "friendships" ("friend2_id", "begin_date", "friend1_id", "how_do_you_know", "updated_at", "created_at") VALUES (0, '2011-09-02', 0, 'pullamma met me while cleaning restrooms', '2011-09-02 23:03:52.372663', '2011-09-02 23:03:52.372663')
+Redirected to http://localhost:3000/friendships/1
+Completed 302 Found in 36ms
+
+
+Started GET "/friendships/1" for 127.0.0.1 at Fri Sep 02 16:03:52 -0700 2011
+  Processing by FriendshipsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."id" = 1 LIMIT 1[0m
+Rendered friendships/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 20ms (Views: 13.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/friendships" for 127.0.0.1 at Fri Sep 02 16:03:54 -0700 2011
+  Processing by FriendshipsController#index as HTML
+  [1m[35mFriendship Load (0.5ms)[0m  SELECT "friendships".* FROM "friendships"
+Rendered friendships/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 23ms (Views: 16.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/friendships/1" for 127.0.0.1 at Fri Sep 02 16:04:03 -0700 2011
+  Processing by FriendshipsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."id" = 1 LIMIT 1[0m
+Rendered friendships/show.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 20ms (Views: 13.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/friendships/1/edit" for 127.0.0.1 at Fri Sep 02 16:04:07 -0700 2011
+  Processing by FriendshipsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT "friendships".* FROM "friendships" WHERE "friendships"."id" = 1 LIMIT 1
+Rendered friendships/_form.html.erb (17.7ms)
+Rendered friendships/edit.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 32ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/friendships/1" for 127.0.0.1 at Fri Sep 02 16:04:12 -0700 2011
+  Processing by FriendshipsController#update as HTML
+  Parameters: {"commit"=>"Update Friendship", "friendship"=>{"begin_date(1i)"=>"2011", "begin_date(2i)"=>"9", "begin_date(3i)"=>"2", "friend1_id"=>"1", "how_do_you_know"=>"pullamma met me while cleaning restrooms", "friend2_id"=>"7"}, "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"1"}
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."id" = 1 LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "friendships" SET "friend2_id" = 7, "friend1_id" = 1, "updated_at" = '2011-09-02 23:04:12.924411' WHERE "friendships"."id" = 1
+Redirected to http://localhost:3000/friendships/1
+Completed 302 Found in 29ms
+
+
+Started GET "/friendships/1" for 127.0.0.1 at Fri Sep 02 16:04:12 -0700 2011
+  Processing by FriendshipsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."id" = 1 LIMIT 1[0m
+Rendered friendships/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 21ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/friendships" for 127.0.0.1 at Fri Sep 02 16:04:14 -0700 2011
+  Processing by FriendshipsController#index as HTML
+  [1m[35mFriendship Load (0.5ms)[0m  SELECT "friendships".* FROM "friendships"
+Rendered friendships/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 63ms (Views: 57.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/friendships" for 127.0.0.1 at Fri Sep 02 16:05:04 -0700 2011
+  Processing by FriendshipsController#index as HTML
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT "friendships".* FROM "friendships"[0m
+Rendered friendships/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 41ms (Views: 16.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/friendships" for 127.0.0.1 at Fri Sep 02 16:05:06 -0700 2011
+  Processing by FriendshipsController#index as HTML
+  [1m[35mFriendship Load (0.5ms)[0m  SELECT "friendships".* FROM "friendships"
+Rendered friendships/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 24ms (Views: 16.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/friendships/new" for 127.0.0.1 at Fri Sep 02 16:05:08 -0700 2011
+  Processing by FriendshipsController#new as HTML
+Rendered friendships/_form.html.erb (56.4ms)
+Rendered friendships/new.html.erb within layouts/application (62.0ms)
+Completed 200 OK in 73ms (Views: 66.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/friendships" for 127.0.0.1 at Fri Sep 02 16:05:15 -0700 2011
+  Processing by FriendshipsController#create as HTML
+  Parameters: {"commit"=>"Create Friendship", "friendship"=>{"begin_date(1i)"=>"2011", "begin_date(2i)"=>"9", "begin_date(3i)"=>"2", "friend1_id"=>"1", "how_do_you_know"=>"aa", "friend2_id"=>"45"}, "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223"}
+  [1m[36mAREL (1.0ms)[0m  [1mINSERT INTO "friendships" ("begin_date", "updated_at", "friend1_id", "how_do_you_know", "friend2_id", "created_at") VALUES ('2011-09-02', '2011-09-02 23:05:15.303582', 1, 'aa', 45, '2011-09-02 23:05:15.303582')[0m
+Redirected to http://localhost:3000/friendships/2
+Completed 302 Found in 37ms
+
+
+Started GET "/friendships/2" for 127.0.0.1 at Fri Sep 02 16:05:15 -0700 2011
+  Processing by FriendshipsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT "friendships".* FROM "friendships" WHERE "friendships"."id" = 2 LIMIT 1
+Rendered friendships/show.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 66ms (Views: 58.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/friendships" for 127.0.0.1 at Fri Sep 02 16:05:22 -0700 2011
+  Processing by FriendshipsController#index as HTML
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT "friendships".* FROM "friendships"[0m
+Rendered friendships/index.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 25ms (Views: 17.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 16:06:59 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 53ms (Views: 23.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 16:07:02 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 32ms (Views: 22.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 16:07:04 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 37ms (Views: 26.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 02 16:07:07 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (72.4ms)
+Rendered users/new.html.erb within layouts/application (77.5ms)
+Completed 200 OK in 90ms (Views: 81.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 16:07:10 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 35ms (Views: 24.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at Fri Sep 02 16:07:11 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/_form.html.erb (29.6ms)
+Rendered users/edit.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 50ms (Views: 38.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/2" for 127.0.0.1 at Fri Sep 02 16:07:13 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"2", "user"=>{"city"=>"bapatla", "interests"=>"poultry", "about_me"=>"I prefer to work on small scale projects which are always good for me. I will raise 10 chicken and sell them for meat and egg.", "zipcode"=>"522101", "gender"=>"female", "user_id"=>"ellamma", "last_name"=>"konderapu", "address_line1"=>"narasayapalem", "first_name"=>"ellamma", "address_line2"=>"Bapatla", "state"=>"andhr apradesh"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."user_id" = 'ellamma') AND ("users".id <> 2) LIMIT 1
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 29ms
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 16:07:13 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (53.5ms)
+Completed 200 OK in 67ms (Views: 57.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 16:07:16 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 68ms (Views: 58.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 16:07:31 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 36ms (Views: 24.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 16:07:33 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 33ms (Views: 23.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 16:07:35 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 32ms (Views: 22.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at Fri Sep 02 16:07:36 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/_form.html.erb (30.1ms)
+Rendered users/edit.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 53ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/3" for 127.0.0.1 at Fri Sep 02 16:07:38 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"3", "user"=>{"city"=>"uhuuu", "interests"=>"peda etthatam pidakalu cheyyatam", "about_me"=>"my sexy name is pullmmaa", "zipcode"=>"96398", "gender"=>"sexy", "user_id"=>"pulli", "last_name"=>"pilli", "address_line1"=>"hehe address kudana", "first_name"=>"pullamma", "address_line2"=>"aa inka challe", "state"=>"ap/telangana"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."user_id" = 'pulli') AND ("users".id <> 3) LIMIT 1
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 28ms
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 16:07:38 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 69ms (Views: 59.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 16:07:54 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/show.html.erb within layouts/application (58.9ms)
+Completed 200 OK in 73ms (Views: 62.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 16:07:55 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 31ms (Views: 21.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at Fri Sep 02 16:07:57 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/_form.html.erb (64.4ms)
+Rendered users/edit.html.erb within layouts/application (69.5ms)
+Completed 200 OK in 86ms (Views: 73.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/users/3" for 127.0.0.1 at Fri Sep 02 16:07:59 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"3", "user"=>{"city"=>"uhuuu", "interests"=>"peda etthatam pidakalu cheyyatam", "about_me"=>"my sexy name is pullmmaa", "zipcode"=>"96398", "gender"=>"sexy", "user_id"=>"pulli", "last_name"=>"pilli", "address_line1"=>"hehe address kudana", "first_name"=>"pullamma", "address_line2"=>"aa inka challe", "state"=>"ap/telangana"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."user_id" = 'pulli') AND ("users".id <> 3) LIMIT 1
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 29ms
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 16:07:59 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (56.2ms)
+Completed 200 OK in 70ms (Views: 60.2ms | ActiveRecord: 0.2ms)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTestProducts (20110831051521)
+Migrating to CreateUsers (20110902052025)
+Migrating to CreateFriendships (20110902061847)
+Migrating to CreateProjects (20110902062617)
+Migrating to CreateProjectFundings (20110902063438)
+Migrating to CreateReceiverRequests (20110902063713)
+Migrating to CreateDonorRequests (20110902063808)
+Migrating to CreateFriendshipSentRequests (20110902233354)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TABLE "friendship_sent_requests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "from_user" integer, "to_user" integer, "message" varchar(255), "sent_date" date, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110902233354')
+Migrating to ModifyUser (20110902233524)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTestProducts (20110831051521)
+Migrating to CreateUsers (20110902052025)
+Migrating to CreateFriendships (20110902061847)
+Migrating to CreateProjects (20110902062617)
+Migrating to CreateProjectFundings (20110902063438)
+Migrating to CreateReceiverRequests (20110902063713)
+Migrating to CreateDonorRequests (20110902063808)
+Migrating to CreateFriendshipSentRequests (20110902233354)
+Migrating to ModifyUser (20110902233524)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTestProducts (20110831051521)
+Migrating to CreateUsers (20110902052025)
+Migrating to CreateFriendships (20110902061847)
+Migrating to CreateProjects (20110902062617)
+Migrating to CreateProjectFundings (20110902063438)
+Migrating to CreateReceiverRequests (20110902063713)
+Migrating to CreateDonorRequests (20110902063808)
+Migrating to CreateFriendshipSentRequests (20110902233354)
+Migrating to ModifyUser (20110902233524)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "phone_number" integer[0m
+SQLite3::SQLException: duplicate column name: phone_number: ALTER TABLE "users" ADD "phone_number" integer
+
+
+Started GET "/friendships" for 127.0.0.1 at Fri Sep 02 16:44:01 -0700 2011
+  Processing by FriendshipsController#index as HTML
+  [1m[35mFriendship Load (0.8ms)[0m  SELECT "friendships".* FROM "friendships"
+Rendered friendships/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 27ms (Views: 19.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/friendship_sent_requests" for 127.0.0.1 at Fri Sep 02 16:44:14 -0700 2011
+  Processing by FriendshipSentRequestsController#index as HTML
+  [1m[36mFriendshipSentRequest Load (0.4ms)[0m  [1mSELECT "friendship_sent_requests".* FROM "friendship_sent_requests"[0m
+Rendered friendship_sent_requests/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 16ms (Views: 8.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/friendship_sent_requests/new" for 127.0.0.1 at Fri Sep 02 16:44:20 -0700 2011
+  Processing by FriendshipSentRequestsController#new as HTML
+Rendered friendship_sent_requests/_form.html.erb (18.0ms)
+Rendered friendship_sent_requests/new.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 36ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/friendship_sent_requests" for 127.0.0.1 at Fri Sep 02 16:44:27 -0700 2011
+  Processing by FriendshipSentRequestsController#index as HTML
+  [1m[35mFriendshipSentRequest Load (1.0ms)[0m  SELECT "friendship_sent_requests".* FROM "friendship_sent_requests"
+Rendered friendship_sent_requests/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 19ms (Views: 8.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/friendship_sent_requests/new" for 127.0.0.1 at Fri Sep 02 16:45:02 -0700 2011
+  Processing by FriendshipSentRequestsController#new as HTML
+Rendered friendship_sent_requests/_form.html.erb (15.6ms)
+Rendered friendship_sent_requests/new.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 32ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/friendship_sent_requests" for 127.0.0.1 at Fri Sep 02 16:45:03 -0700 2011
+  Processing by FriendshipSentRequestsController#create as HTML
+  Parameters: {"commit"=>"Create Friendship sent request", "friendship_sent_request"=>{"sent_date(1i)"=>"2011", "from_user"=>"", "sent_date(2i)"=>"9", "sent_date(3i)"=>"2", "to_user"=>"", "message"=>""}, "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223"}
+Rendered friendship_sent_requests/_form.html.erb (12.7ms)
+Rendered friendship_sent_requests/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 40ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/friendship_sent_requests" for 127.0.0.1 at Fri Sep 02 16:45:11 -0700 2011
+  Processing by FriendshipSentRequestsController#index as HTML
+  [1m[36mFriendshipSentRequest Load (0.7ms)[0m  [1mSELECT "friendship_sent_requests".* FROM "friendship_sent_requests"[0m
+Rendered friendship_sent_requests/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 54ms (Views: 46.4ms | ActiveRecord: 0.7ms)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTestProducts (20110831051521)
+Migrating to CreateUsers (20110902052025)
+Migrating to CreateFriendships (20110902061847)
+Migrating to CreateProjects (20110902062617)
+Migrating to CreateProjectFundings (20110902063438)
+Migrating to CreateReceiverRequests (20110902063713)
+Migrating to CreateDonorRequests (20110902063808)
+Migrating to CreateFriendshipSentRequests (20110902233354)
+Migrating to ModifyUser (20110902233524)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "phone_number" integer[0m
+SQLite3::SQLException: duplicate column name: phone_number: ALTER TABLE "users" ADD "phone_number" integer
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTestProducts (20110831051521)
+Migrating to CreateUsers (20110902052025)
+Migrating to CreateFriendships (20110902061847)
+Migrating to CreateProjects (20110902062617)
+Migrating to CreateProjectFundings (20110902063438)
+Migrating to CreateReceiverRequests (20110902063713)
+Migrating to CreateDonorRequests (20110902063808)
+Migrating to CreateFriendshipSentRequests (20110902233354)
+Migrating to ModifyUser (20110902233524)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "phone_number" integer[0m
+SQLite3::SQLException: duplicate column name: phone_number: ALTER TABLE "users" ADD "phone_number" integer
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTestProducts (20110831051521)
+Migrating to CreateUsers (20110902052025)
+Migrating to CreateFriendships (20110902061847)
+Migrating to CreateProjects (20110902062617)
+Migrating to CreateProjectFundings (20110902063438)
+Migrating to CreateReceiverRequests (20110902063713)
+Migrating to CreateDonorRequests (20110902063808)
+Migrating to CreateFriendshipSentRequests (20110902233354)
+Migrating to AddPasswordToUser (20110902235411)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTestProducts (20110831051521)
+Migrating to CreateUsers (20110902052025)
+Migrating to CreateFriendships (20110902061847)
+Migrating to CreateProjects (20110902062617)
+Migrating to CreateProjectFundings (20110902063438)
+Migrating to CreateReceiverRequests (20110902063713)
+Migrating to CreateDonorRequests (20110902063808)
+Migrating to CreateFriendshipSentRequests (20110902233354)
+Migrating to AddPasswordToUser (20110902235411)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (206.4ms)[0m  [1mALTER TABLE "users" ADD "password" varchar(255)[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110902235411')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("donor_requests")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("friendship_sent_requests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("friendships")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("project_fundings")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("projects")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("receiver_requests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("test_products")
+  [1m[36mSQL (0.3ms)[0m  [1mPRAGMA index_list("users")[0m
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 17:06:27 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 82ms (Views: 34.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 17:06:29 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 42ms (Views: 27.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at Fri Sep 02 17:06:32 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+ERROR: compiling _app_views_users__form_html_erb___943588327__620888048_443616 RAISED compile error
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:55: syntax error, unexpected tIDENTIFIER, expecting ')'
+...end= ( f.label :Enter password again );@output_buffer.safe_c...
+                              ^
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fer.append= ( f.label :Date of Birth );@output_buffer.safe_c...
+                              ^
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:64: syntax error, unexpected tCONSTANT, expecting ')'
+...ppend= ( f.label :Phone Number );@output_buffer.safe_concat(...
+                              ^
+Function body:           def _app_views_users__form_html_erb___943588327__620888048_443616(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "users/_form";_old_output_buffer = @output_buffer;form = local_assigns[:form];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  form_for(@user) do |f| @output_buffer.safe_concat('
+');   if @user.errors.any? 
+@output_buffer.safe_concat('    <div id="error_explanation">
+      <h2>');@output_buffer.append= ( pluralize(@user.errors.count, "error") );@output_buffer.safe_concat(' prohibited this user from being saved:</h2>
+
+      <ul>
+');@output_buffer.append_if_string=        @user.errors.full_messages.each do |msg| 
+@output_buffer.safe_concat('        <li>');@output_buffer.append= ( msg );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('      </ul>
+    </div>
+');   end 
+@output_buffer.safe_concat('
+  <div class="field">
+    ');@output_buffer.append= ( f.label :first_name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :first_name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :last_name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :last_name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :gender );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :gender );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :address_line1 );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :address_line1 );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :address_line2 );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :address_line2 );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :city );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :city );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :state );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :state );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :zipcode );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :zipcode );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :emailid );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :email_id );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :passowrd );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :password);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Enter password again );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :password_confirmation );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Date of Birth );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.date_select :date_of_birth );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Phone Number );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :area_code );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.text_field :phone_number );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Userid );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :user_id );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :about_me );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :about_me, :rows => 6 );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :interests );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :interests, :rows => 1 );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:87:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:333:in `render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:262:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:378:in `_render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:31:in `render'
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/edit.html.erb:3:in `_app_views_users_edit_html_erb__32874014__620882758_0'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:436:in `_run__434435962__process_action__155074602__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered users/_form.html.erb (22.3ms)
+Rendered users/edit.html.erb within layouts/application (24.0ms)
+Completed   in 41ms
+
+ActionView::Template::Error (compile error
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:55: syntax error, unexpected tIDENTIFIER, expecting ')'
+...end= ( f.label :Enter password again );@output_buffer.safe_c...
+                              ^
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fer.append= ( f.label :Date of Birth );@output_buffer.safe_c...
+                              ^
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:64: syntax error, unexpected tCONSTANT, expecting ')'
+...ppend= ( f.label :Phone Number );@output_buffer.safe_concat(...
+                              ^):
+    52:     <%= f.text_field :password%>
+    53:   </div>
+    54:   <div class="field">
+    55:     <%= f.label :Enter password again %><br />
+    56:     <%= f.text_field :password_confirmation %>
+    57:   </div>
+    58: 
+  app/views/users/_form.html.erb:87:in `compile'
+  app/views/users/edit.html.erb:3:in `_app_views_users_edit_html_erb__32874014__620882758_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (20.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (25.6ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 17:08:43 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/show.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 84ms (Views: 29.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at Fri Sep 02 17:08:46 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+ERROR: compiling _app_views_users__form_html_erb___943588327__621108778_443616 RAISED compile error
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:55: syntax error, unexpected tIDENTIFIER, expecting ')'
+...end= ( f.label :Enter password again );@output_buffer.safe_c...
+                              ^
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fer.append= ( f.label :Date of Birth );@output_buffer.safe_c...
+                              ^
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:64: syntax error, unexpected tCONSTANT, expecting ')'
+...ppend= ( f.label :Phone Number );@output_buffer.safe_concat(...
+                              ^
+Function body:           def _app_views_users__form_html_erb___943588327__621108778_443616(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "users/_form";_old_output_buffer = @output_buffer;form = local_assigns[:form];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  form_for(@user) do |f| @output_buffer.safe_concat('
+');   if @user.errors.any? 
+@output_buffer.safe_concat('    <div id="error_explanation">
+      <h2>');@output_buffer.append= ( pluralize(@user.errors.count, "error") );@output_buffer.safe_concat(' prohibited this user from being saved:</h2>
+
+      <ul>
+');@output_buffer.append_if_string=        @user.errors.full_messages.each do |msg| 
+@output_buffer.safe_concat('        <li>');@output_buffer.append= ( msg );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('      </ul>
+    </div>
+');   end 
+@output_buffer.safe_concat('
+  <div class="field">
+    ');@output_buffer.append= ( f.label :first_name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :first_name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :last_name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :last_name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :gender );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :gender );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :address_line1 );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :address_line1 );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :address_line2 );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :address_line2 );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :city );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :city );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :state );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :state );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :zipcode );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :zipcode );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :emailid );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :email_id );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :passowrd );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :password);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Enter password again );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :password_confirmation );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Date of Birth );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.date_select :date_of_birth );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Phone Number );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :area_code );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.text_field :phone_number );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Userid );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :user_id );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :about_me );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :about_me, :rows => 6 );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :interests );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :interests, :rows => 1 );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:87:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:333:in `render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:262:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:378:in `_render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:31:in `render'
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/edit.html.erb:3:in `_app_views_users_edit_html_erb__32874014__621092378_0'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:436:in `_run__434435962__process_action__155074602__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered users/_form.html.erb (4.7ms)
+Rendered users/edit.html.erb within layouts/application (7.8ms)
+Completed   in 25ms
+
+ActionView::Template::Error (compile error
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:55: syntax error, unexpected tIDENTIFIER, expecting ')'
+...end= ( f.label :Enter password again );@output_buffer.safe_c...
+                              ^
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fer.append= ( f.label :Date of Birth );@output_buffer.safe_c...
+                              ^
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:64: syntax error, unexpected tCONSTANT, expecting ')'
+...ppend= ( f.label :Phone Number );@output_buffer.safe_concat(...
+                              ^):
+    52:     <%= f.text_field :password%>
+    53:   </div>
+    54:   <div class="field">
+    55:     <%= f.label :Enter password again %><br />
+    56:     <%= f.text_field :password_confirmation %>
+    57:   </div>
+    58: 
+  app/views/users/_form.html.erb:87:in `compile'
+  app/views/users/edit.html.erb:3:in `_app_views_users_edit_html_erb__32874014__621092378_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (22.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (27.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 17:13:56 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (29.6ms)
+Completed 200 OK in 78ms (Views: 33.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Fri Sep 02 17:13:59 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (21.6ms)
+Completed 200 OK in 37ms (Views: 25.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 17:14:02 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/show.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 41ms (Views: 27.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at Fri Sep 02 17:14:03 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+ERROR: compiling _app_views_users__form_html_erb___943588327__621220188_443616 RAISED compile error
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fer.append= ( f.label :Date of Birth );@output_buffer.safe_c...
+                              ^
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:64: syntax error, unexpected tCONSTANT, expecting ')'
+...ppend= ( f.label :Phone Number );@output_buffer.safe_concat(...
+                              ^
+Function body:           def _app_views_users__form_html_erb___943588327__621220188_443616(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "users/_form";_old_output_buffer = @output_buffer;form = local_assigns[:form];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append=  form_for(@user) do |f| @output_buffer.safe_concat('
+');   if @user.errors.any? 
+@output_buffer.safe_concat('    <div id="error_explanation">
+      <h2>');@output_buffer.append= ( pluralize(@user.errors.count, "error") );@output_buffer.safe_concat(' prohibited this user from being saved:</h2>
+
+      <ul>
+');@output_buffer.append_if_string=        @user.errors.full_messages.each do |msg| 
+@output_buffer.safe_concat('        <li>');@output_buffer.append= ( msg );@output_buffer.safe_concat('</li>
+');       end 
+@output_buffer.safe_concat('      </ul>
+    </div>
+');   end 
+@output_buffer.safe_concat('
+  <div class="field">
+    ');@output_buffer.append= ( f.label :first_name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :first_name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :last_name );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :last_name );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :gender );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :gender );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :address_line1 );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :address_line1 );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :address_line2 );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :address_line2 );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :city );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :city );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :state );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :state );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :zipcode );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :zipcode );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :emailid );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :email_id );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :passowrd );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :password);@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Enter_password_again );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :password_confirmation );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Date of Birth );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.date_select :date_of_birth );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Phone Number );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :area_code );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.text_field :phone_number );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :Userid );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_field :user_id );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :about_me );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :about_me, :rows => 6 );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="field">
+    ');@output_buffer.append= ( f.label :interests );@output_buffer.safe_concat('<br />
+    ');@output_buffer.append= ( f.text_area :interests, :rows => 1 );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:87:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:333:in `render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:262:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:260:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/partials.rb:378:in `_render_partial'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:31:in `render'
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/edit.html.erb:3:in `_app_views_users_edit_html_erb__32874014__621210488_0'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:135:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:93:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:14:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/implicit_render.rb:6:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:150:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:436:in `_run__434435962__process_action__155074602__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/base.rb:119:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/abstract_controller/rendering.rb:41:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_controller/metal.rb:178
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.7/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.7/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.2/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.7/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered users/_form.html.erb (5.1ms)
+Rendered users/edit.html.erb within layouts/application (6.7ms)
+Completed   in 22ms
+
+ActionView::Template::Error (compile error
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fer.append= ( f.label :Date of Birth );@output_buffer.safe_c...
+                              ^
+/home/invinc/work/meethodu/anish-test-code/meethodu/app/views/users/_form.html.erb:64: syntax error, unexpected tCONSTANT, expecting ')'
+...ppend= ( f.label :Phone Number );@output_buffer.safe_concat(...
+                              ^):
+    57:   </div>
+    58: 
+    59:   <div class="field">
+    60:     <%= f.label :Date of Birth %><br />
+    61:     <%= f.date_select :date_of_birth %>
+    62:   </div>
+    63:   <div class="field">
+  app/views/users/_form.html.erb:87:in `compile'
+  app/views/users/edit.html.erb:3:in `_app_views_users_edit_html_erb__32874014__621210488_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (20.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (25.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 17:14:49 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 78ms (Views: 32.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 17:14:51 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 38ms (Views: 25.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at Fri Sep 02 17:14:53 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/_form.html.erb (72.8ms)
+Rendered users/edit.html.erb within layouts/application (74.4ms)
+Completed   in 89ms
+
+ActionView::Template::Error (undefined method `email_id' for #<User:0xb5f58100>):
+    45:   </div>
+    46:   <div class="field">
+    47:     <%= f.label :emailid %><br />
+    48:     <%= f.text_field :email_id %>
+    49:   </div>
+    50:   <div class="field">
+    51:     <%= f.label :passowrd %><br />
+  app/views/users/_form.html.erb:48:in `_app_views_users__form_html_erb___943588327__621115358_443616'
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___943588327__621115358_443616'
+  app/views/users/edit.html.erb:3:in `_app_views_users_edit_html_erb__32874014__621109828_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 17:18:08 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 78ms (Views: 32.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 17:18:09 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 40ms (Views: 27.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at Fri Sep 02 17:18:11 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/_form.html.erb (84.4ms)
+Rendered users/edit.html.erb within layouts/application (90.8ms)
+Completed 200 OK in 109ms (Views: 96.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/3" for 127.0.0.1 at Fri Sep 02 17:18:17 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"3", "user"=>{"city"=>"uhuuu", "interests"=>"peda etthatam pidakalu cheyyatam", "about_me"=>"my sexy name is pullmmaa", "area_code"=>"", "zipcode"=>"96398", "password_confirmation"=>"[FILTERED]", "gender"=>"sexy", "phone_number"=>"", "user_id"=>"pulli", "last_name"=>"pilli", "date_of_birth(1i)"=>"2011", "address_line1"=>"hehe address kudana", "password"=>"[FILTERED]", "date_of_birth(2i)"=>"9", "first_name"=>"pullamma", "address_line2"=>"aa inka challe", "state"=>"ap/telangana", "date_of_birth(3i)"=>"3"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."user_id" = 'pulli') AND ("users".id <> 3) LIMIT 1
+Rendered users/_form.html.erb (59.1ms)
+Rendered users/edit.html.erb within layouts/application (64.5ms)
+Completed 200 OK in 109ms (Views: 68.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users/3" for 127.0.0.1 at Fri Sep 02 17:18:27 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"3", "user"=>{"city"=>"uhuuu", "interests"=>"peda etthatam pidakalu cheyyatam", "about_me"=>"my sexy name is pullmmaa", "area_code"=>"", "zipcode"=>"96398", "password_confirmation"=>"[FILTERED]", "gender"=>"sexy", "phone_number"=>"", "user_id"=>"pulli", "last_name"=>"pilli", "date_of_birth(1i)"=>"2011", "address_line1"=>"hehe address kudana", "password"=>"[FILTERED]", "date_of_birth(2i)"=>"9", "first_name"=>"pullamma", "address_line2"=>"aa inka challe", "state"=>"ap/telangana", "date_of_birth(3i)"=>"3"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."user_id" = 'pulli') AND ("users".id <> 3) LIMIT 1
+Rendered users/_form.html.erb (21.3ms)
+Rendered users/edit.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 61ms (Views: 32.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 17:20:50 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/show.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 70ms (Views: 25.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at Fri Sep 02 17:20:53 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/_form.html.erb (75.3ms)
+Rendered users/edit.html.erb within layouts/application (76.9ms)
+Completed   in 91ms
+
+ActionView::Template::Error (undefined method `email_id' for #<User:0xb5f3fd1c>):
+    47:   </div>
+    48:   <div class="field">
+    49:     <%= f.label :Email_Id %><br />
+    50:     <%= f.text_field :email_id %>
+    51:   </div>
+    52:   <div class="field">
+    53:     <%= f.label :passowrd %><br />
+  app/views/users/_form.html.erb:50:in `_app_views_users__form_html_erb___943588327__621188578_443616'
+  app/views/users/_form.html.erb:1:in `_app_views_users__form_html_erb___943588327__621188578_443616'
+  app/views/users/edit.html.erb:3:in `_app_views_users_edit_html_erb__32874014__621172168_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.5ms)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTestProducts (20110831051521)
+Migrating to CreateUsers (20110902052025)
+Migrating to CreateFriendships (20110902061847)
+Migrating to CreateProjects (20110902062617)
+Migrating to CreateProjectFundings (20110902063438)
+Migrating to CreateReceiverRequests (20110902063713)
+Migrating to CreateDonorRequests (20110902063808)
+Migrating to CreateFriendshipSentRequests (20110902233354)
+Migrating to AddPasswordToUser (20110902235411)
+Migrating to AddEmailIdToUsers (20110903002200)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.8ms)[0m  [1mALTER TABLE "users" ADD "email_id" varchar(255)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110903002200')
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  PRAGMA index_list("donor_requests")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("friendship_sent_requests")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("friendships")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("project_fundings")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("projects")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("receiver_requests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("test_products")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 17:23:50 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 81ms (Views: 35.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Sep 02 17:23:52 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 40ms (Views: 27.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/3/edit" for 127.0.0.1 at Fri Sep 02 17:23:54 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1
+Rendered users/_form.html.erb (87.4ms)
+Rendered users/edit.html.erb within layouts/application (92.8ms)
+Completed 200 OK in 109ms (Views: 96.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/3" for 127.0.0.1 at Fri Sep 02 17:24:05 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"3", "user"=>{"city"=>"uhuuu", "interests"=>"peda etthatam pidakalu cheyyatam", "about_me"=>"my sexy name is pullmmaa", "area_code"=>"", "zipcode"=>"96398", "password_confirmation"=>"[FILTERED]", "gender"=>"sexy", "phone_number"=>"", "user_id"=>"pulli", "last_name"=>"pilli", "date_of_birth(1i)"=>"2011", "address_line1"=>"hehe address kudana", "password"=>"[FILTERED]", "date_of_birth(2i)"=>"9", "first_name"=>"pullamma", "address_line2"=>"aa inka challe", "state"=>"ap/telangana", "email_id"=>"", "date_of_birth(3i)"=>"3"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 3 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."user_id" = 'pulli') AND ("users".id <> 3) LIMIT 1
+Rendered users/_form.html.erb (59.3ms)
+Rendered users/edit.html.erb within layouts/application (64.5ms)
+Completed 200 OK in 110ms (Views: 68.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 17:24:08 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (59.5ms)
+Completed 200 OK in 73ms (Views: 63.5ms | ActiveRecord: 0.6ms)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateTestProducts (20110831051521)
+Migrating to CreateUsers (20110902052025)
+Migrating to CreateFriendships (20110902061847)
+Migrating to CreateProjects (20110902062617)
+Migrating to CreateProjectFundings (20110902063438)
+Migrating to CreateReceiverRequests (20110902063713)
+Migrating to CreateDonorRequests (20110902063808)
+Migrating to CreateFriendshipSentRequests (20110902233354)
+Migrating to AddPasswordToUser (20110902235411)
+Migrating to AddEmailIdToUsers (20110903002200)
+Migrating to AddHashedPasswordForUser (20110903004351)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.8ms)[0m  [1mALTER TABLE "users" ADD "hashed_password" varchar(255)[0m
+  [1m[35mSQL (0.2ms)[0m  ALTER TABLE "users" ADD "salt" varchar(255)
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110903004351')[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("donor_requests")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("friendship_sent_requests")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("friendships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("project_fundings")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("projects")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("receiver_requests")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("test_products")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/users" for 127.0.0.1 at Fri Sep 02 17:50:38 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 79ms (Views: 33.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at Fri Sep 02 17:50:40 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 41ms (Views: 28.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/2/edit" for 127.0.0.1 at Fri Sep 02 17:50:42 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/_form.html.erb (86.6ms)
+Rendered users/edit.html.erb within layouts/application (93.6ms)
+Completed 200 OK in 109ms (Views: 97.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/2" for 127.0.0.1 at Fri Sep 02 17:50:44 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"2", "user"=>{"city"=>"bapatla", "interests"=>"poultry", "about_me"=>"I prefer to work on small scale projects which are always good for me. I will raise 10 chicken and sell them for meat and egg.", "area_code"=>"", "zipcode"=>"522101", "password_confirmation"=>"[FILTERED]", "gender"=>"female", "phone_number"=>"", "user_id"=>"ellamma", "last_name"=>"konderapu", "date_of_birth(1i)"=>"2011", "address_line1"=>"narasayapalem", "password"=>"[FILTERED]", "date_of_birth(2i)"=>"9", "first_name"=>"ellamma", "address_line2"=>"Bapatla", "state"=>"andhr apradesh", "email_id"=>"", "date_of_birth(3i)"=>"3"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."user_id" = 'ellamma') AND ("users".id <> 2) LIMIT 1
+Completed   in 81ms
+
+NoMethodError (undefined method `_password_confirmation' for #<User:0xb5ebf590>):
+  app/controllers/users_controller.rb:62
+  app/controllers/users_controller.rb:61:in `update'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.3ms)

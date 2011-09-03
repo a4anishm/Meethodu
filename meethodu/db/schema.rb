@@ -10,13 +10,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110902063808) do
+ActiveRecord::Schema.define(:version => 20110903004351) do
 
   create_table "donor_requests", :force => true do |t|
     t.integer  "project_id"
     t.boolean  "sent"
     t.date     "sent_date"
     t.integer  "sent_money"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "friendship_sent_requests", :force => true do |t|
+    t.integer  "from_user"
+    t.integer  "to_user"
+    t.string   "message"
+    t.date     "sent_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -87,6 +96,10 @@ ActiveRecord::Schema.define(:version => 20110902063808) do
     t.string   "phone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "password"
+    t.string   "email_id"
+    t.string   "hashed_password"
+    t.string   "salt"
   end
 
 end

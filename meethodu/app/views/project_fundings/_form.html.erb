@@ -1,0 +1,33 @@
+<%= form_for(@project_funding) do |f| %>
+  <% if @project_funding.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project_funding.errors.count, "error") %> prohibited this project_funding from being saved:</h2>
+
+      <ul>
+      <% @project_funding.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :project_id %><br />
+    <%= f.text_field :project_id %>
+  </div>
+  <div class="field">
+    <%= f.label :receiver_id %><br />
+    <%= f.text_field :receiver_id %>
+  </div>
+  <div class="field">
+    <%= f.label :recommender_id %><br />
+    <%= f.text_field :recommender_id %>
+  </div>
+  <div class="field">
+    <%= f.label :donor_id %><br />
+    <%= f.text_field :donor_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

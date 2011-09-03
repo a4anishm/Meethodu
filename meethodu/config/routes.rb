@@ -1,4 +1,6 @@
 Meethodu::Application.routes.draw do
+  resources :friendship_sent_requests
+
   resources :donor_requests
 
   resources :receiver_requests

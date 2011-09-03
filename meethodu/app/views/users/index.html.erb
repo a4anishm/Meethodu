@@ -1,0 +1,23 @@
+<div id="mee_user">
+<h1>All users</h1>
+<h3 class="page_directions"> This is the list of all users registered with us. Please go through them carefully before you make a choice of your investment(aka donation). </page_directions>
+
+<br />
+
+<table>
+
+<% @users.each do |user| %>
+  <tr class="<%= cycle('mee_line_odd', 'mee_line_even') %>" >
+    <td class="mee_user_first_name"><%= user.first_name %></td>
+    <td class="mee_user_last_name"><%= user.last_name %></td>
+    <td class="mee_user_gender"><%= user.gender %></td>
+    <td class="mee_user_city"><%= user.city %></td>
+    <td><%= link_to 'Show', user %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Sign Up', new_user_path %>
+</div>

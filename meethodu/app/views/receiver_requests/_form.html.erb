@@ -1,0 +1,29 @@
+<%= form_for(@receiver_request) do |f| %>
+  <% if @receiver_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@receiver_request.errors.count, "error") %> prohibited this receiver_request from being saved:</h2>
+
+      <ul>
+      <% @receiver_request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :project_id %><br />
+    <%= f.text_field :project_id %>
+  </div>
+  <div class="field">
+    <%= f.label :received %><br />
+    <%= f.check_box :received %>
+  </div>
+  <div class="field">
+    <%= f.label :received_date %><br />
+    <%= f.date_select :received_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

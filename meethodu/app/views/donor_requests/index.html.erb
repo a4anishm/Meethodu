@@ -1,0 +1,29 @@
+<h1>Listing donor_requests</h1>
+
+<table>
+  <tr>
+    <th>Project</th>
+    <th>Sent</th>
+    <th>Sent date</th>
+    <th>Sent money</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @donor_requests.each do |donor_request| %>
+  <tr>
+    <td><%= donor_request.project_id %></td>
+    <td><%= donor_request.sent %></td>
+    <td><%= donor_request.sent_date %></td>
+    <td><%= donor_request.sent_money %></td>
+    <td><%= link_to 'Show', donor_request %></td>
+    <td><%= link_to 'Edit', edit_donor_request_path(donor_request) %></td>
+    <td><%= link_to 'Destroy', donor_request, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Donor request', new_donor_request_path %>

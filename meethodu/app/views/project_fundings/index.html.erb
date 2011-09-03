@@ -1,0 +1,29 @@
+<h1>Listing project_fundings</h1>
+
+<table>
+  <tr>
+    <th>Project</th>
+    <th>Receiver</th>
+    <th>Recommender</th>
+    <th>Donor</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @project_fundings.each do |project_funding| %>
+  <tr>
+    <td><%= project_funding.project_id %></td>
+    <td><%= project_funding.receiver_id %></td>
+    <td><%= project_funding.recommender_id %></td>
+    <td><%= project_funding.donor_id %></td>
+    <td><%= link_to 'Show', project_funding %></td>
+    <td><%= link_to 'Edit', edit_project_funding_path(project_funding) %></td>
+    <td><%= link_to 'Destroy', project_funding, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project funding', new_project_funding_path %>

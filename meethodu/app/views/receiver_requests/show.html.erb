@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Project:</b>
+  <%= @receiver_request.project_id %>
+</p>
+
+<p>
+  <b>Received:</b>
+  <%= @receiver_request.received %>
+</p>
+
+<p>
+  <b>Received date:</b>
+  <%= @receiver_request.received_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_receiver_request_path(@receiver_request) %> |
+<%= link_to 'Back', receiver_requests_path %>

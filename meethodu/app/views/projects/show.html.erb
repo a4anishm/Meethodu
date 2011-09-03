@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @project.name %>
+</p>
+
+<p>
+  <b>Summary:</b>
+  <%= @project.summary %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @project.description %>
+</p>
+
+<p>
+  <b>Minimum budget:</b>
+  <%= @project.minimum_budget %>
+</p>
+
+<p>
+  <b>Maximum budget:</b>
+  <%= @project.maximum_budget %>
+</p>
+
+<p>
+  <b>Days to return money:</b>
+  <%= @project.days_to_return_money %>
+</p>
+
+<p>
+  <b>Need referral:</b>
+  <%= @project.need_referral %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

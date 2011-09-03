@@ -1,0 +1,29 @@
+<h1>Listing friendships</h1>
+
+<table>
+  <tr>
+    <th>Friend1</th>
+    <th>Friend2</th>
+    <th>Begin date</th>
+    <th>How do you know</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @friendships.each do |friendship| %>
+  <tr>
+    <td><%= friendship.friend1_id %></td>
+    <td><%= friendship.friend2_id %></td>
+    <td><%= friendship.begin_date %></td>
+    <td><%= friendship.how_do_you_know %></td>
+    <td><%= link_to 'Show', friendship %></td>
+    <td><%= link_to 'Edit', edit_friendship_path(friendship) %></td>
+    <td><%= link_to 'Destroy', friendship, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Friendship', new_friendship_path %>

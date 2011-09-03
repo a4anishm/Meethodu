@@ -52,13 +52,13 @@
 }
 
 #mee_footer_list_faq li {
-list-style-image: none;
+        list-style-image: none;
 	list-style-type: none;
 }
 
 
 #mee_footer_list_contacts li{
-list-style-image: none;
+        list-style-image: none;
 	list-style-type: none;
 }
 
@@ -75,4 +75,33 @@ list-style-image: none;
 	color: #B5E61D;
 	float: left;
 }
+
+#mee_user .mee_line_odd{
+	background: #B5E61D;
+}
+
+#mee_user .mee_line_even{
+	background: #FFFFFF;
+}
+
+#mee_user table{
+	border-collapse: collapse;
+}
+
+#mee_user .mee_user_first_name{
+	font-weight:  bold;
+	font:  150% sans-serif;
+}
+
+#mee_user .mee_user_last_name{
+	font-weight:  bold;
+	font:  150% sans-serif;
+
+}
+
+ .page_directions{
+	font:  150% sans-serif;
+	
+}
+
 	

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Project:</b>
+  <%= @project_funding.project_id %>
+</p>
+
+<p>
+  <b>Receiver:</b>
+  <%= @project_funding.receiver_id %>
+</p>
+
+<p>
+  <b>Recommender:</b>
+  <%= @project_funding.recommender_id %>
+</p>
+
+<p>
+  <b>Donor:</b>
+  <%= @project_funding.donor_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_funding_path(@project_funding) %> |
+<%= link_to 'Back', project_fundings_path %>
