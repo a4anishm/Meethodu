@@ -1,0 +1,29 @@
+<h1>Listing friendship_sent_requests</h1>
+
+<table>
+  <tr>
+    <th>From user</th>
+    <th>To user</th>
+    <th>Message</th>
+    <th>Sent date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @friendship_sent_requests.each do |friendship_sent_request| %>
+  <tr>
+    <td><%= friendship_sent_request.from_user %></td>
+    <td><%= friendship_sent_request.to_user %></td>
+    <td><%= friendship_sent_request.message %></td>
+    <td><%= friendship_sent_request.sent_date %></td>
+    <td><%= link_to 'Show', friendship_sent_request %></td>
+    <td><%= link_to 'Edit', edit_friendship_sent_request_path(friendship_sent_request) %></td>
+    <td><%= link_to 'Destroy', friendship_sent_request, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Friendship sent request', new_friendship_sent_request_path %>

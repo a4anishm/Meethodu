@@ -40,11 +40,19 @@ class FriendshipsController < ApplicationController
   # POST /friendships
   # POST /friendships.xml
   def create
-    @friendship = Friendship.new(params[:friendship])
-
+    @friendship = Friendship.new
+    @friendship.friend1_id = params[:id]
+    @friendship.friend2_id = session[:user_text_id]
+    @friendship.begin_date = Time.now
+    destroy_friendship_sent_request()
     respond_to do |format|
       if @friendship.save
-        format.html { redirect_to(@friendship, :notice => 'Friendship was successfully created.') }
+        @friendship_copy = Friendship.new
+        @friendship_copy.friend2_id = params[:id]
+        @friendship_copy.friend1_id = session[:user_text_id]
+        @friendship_copy.begin_date = Time.now
+        @friendship_copy.save
+        format.html { redirect_to(:back, :alert => "#{params[:id]} is your friend now.") }
         format.xml  { render :xml => @friendship, :status => :created, :location => @friendship }
       else
         format.html { render :action => "new" }

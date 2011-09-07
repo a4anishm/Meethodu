@@ -7,8 +7,12 @@ class User < ActiveRecord::Base
     validates :password_confirmation, :presence => true
     has_many :friendship
 
-private
-    def password_must_be_present
-        errors.add(:_password, "Missing password") unless hashed_password.present?
+    def User.authenticate(userid,password)
+      if user = find_by_user_id(userid)
+        if user.password == password
+          user
+        end
+      end
     end
+
 end

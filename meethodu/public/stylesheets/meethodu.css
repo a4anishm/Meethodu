@@ -23,8 +23,7 @@
 
 #mee_footer{
 	background: #000000;
-	padding-top: 10px;
-	padding-bottom: 10px;
+
 	font: small-caps 40px/40px ;
 }
 
@@ -104,4 +103,47 @@
 	
 }
 
-	
+
+#error_notice{
+        color: #000000;
+        border: 2px solid red;
+        padding: 1em;
+        margin-bottom: 2em;
+        background-color: #f78181;
+        font: bold smaller sans-serif;
+}
+
+#info_notice{
+        color: #000000;
+        border: 2px solid green;
+        padding: 1em;
+        margin-bottom: 2em;
+        background-color: #E1F5A9;
+        font: bold smaller sans-serif;
+}
+.mee_sign_up_link{
+        color: #000000;
+        font-weight:  bold;
+	font:  200% sans-serif;
+        text-align: center;
+        padding: 1em;
+        margin-bottom: 2em;
+        background-color: #B5E61D;
+}
+
+#mee_legend{
+    color:#000000;
+    background:#B5E61D;
+    font-family: sans-serif;
+    padding: 0.2em 1em;
+}
+
+.mee_incoming_friend_box div{
+    display: inline;
+}
+
+#nav_links{
+    vertical-align: bottom;
+    text-align: right;
+    font: 200%;
+}

@@ -40,11 +40,15 @@ class FriendshipSentRequestsController < ApplicationController
   # POST /friendship_sent_requests
   # POST /friendship_sent_requests.xml
   def create
-    @friendship_sent_request = FriendshipSentRequest.new(params[:friendship_sent_request])
+    @friendship_sent_request = FriendshipSentRequest.new
+    @friendship_sent_request.from_user = session[:user_text_id]
+    @friendship_sent_request.to_user = params[:friend_request_user_field_id]
+    @friendship_sent_request.message = params[:friend_request_message_field_id]
+    @friendship_sent_request.sent_date = Time.now
 
     respond_to do |format|
       if @friendship_sent_request.save
-        format.html { redirect_to(@friendship_sent_request, :notice => 'Friendship sent request was successfully created.') }
+        format.html { redirect_to(:back, :alert => "Your friendship request was successfully sent to #{params[:friend_request_user_field_id]}") }
         format.xml  { render :xml => @friendship_sent_request, :status => :created, :location => @friendship_sent_request }
       else
         format.html { render :action => "new" }
@@ -72,11 +76,9 @@ class FriendshipSentRequestsController < ApplicationController
   # DELETE /friendship_sent_requests/1
   # DELETE /friendship_sent_requests/1.xml
   def destroy
-    @friendship_sent_request = FriendshipSentRequest.find(params[:id])
-    @friendship_sent_request.destroy
-
+    destroy_friendship_sent_request()
     respond_to do |format|
-      format.html { redirect_to(friendship_sent_requests_url) }
+      format.html { redirect_to(:back, :notice => "Friendship request from #{params[:id]} was rejected") }
       format.xml  { head :ok }
     end
   end

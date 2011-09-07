@@ -2,11 +2,16 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def index
-    @users = User.all
+    @user = User.find(session[:user_id])
+    if @user
+      redirect_to(:action => show)
+    else
+      @users = User.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @users }
+      respond_to do |format|
+       format.html # index.html.erb
+       format.xml  { render :xml => @users }
+      end
     end
   end
 
@@ -24,7 +29,12 @@ class UsersController < ApplicationController
   # GET /users/new
   # GET /users/new.xml
   def new
-    @user = User.new
+    if(session[:user_id] == 0)
+      @user = User.new
+    else
+      @user = User.find(session[:user_id])
+    end
+
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,16 +44,18 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
   end
 
   # POST /users
   # POST /users.xml
   def create
     @user = User.new(params[:user])
-
     respond_to do |format|
       if @user.save
+        session[:login_status] = 1
+        session[:user_id] = @user.id
+        session[:user_text_id] = @user.user_id
         format.html { redirect_to(@user, :notice => 'User was successfully created.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
@@ -56,7 +68,7 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.xml
   def update
-    @user = User.find(params[:id])
+    @user = User.find(session[:user_id])
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
@@ -72,7 +84,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.xml
   def destroy
-    @user = User.find(params[:id])
+    @user = User.find(params[:user_id])
     @user.destroy
 
     respond_to do |format|

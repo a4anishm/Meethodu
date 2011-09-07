@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>From user:</b>
+  <%= @friendship_sent_request.from_user %>
+</p>
+
+<p>
+  <b>To user:</b>
+  <%= @friendship_sent_request.to_user %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @friendship_sent_request.message %>
+</p>
+
+<p>
+  <b>Sent date:</b>
+  <%= @friendship_sent_request.sent_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_friendship_sent_request_path(@friendship_sent_request) %> |
+<%= link_to 'Back', friendship_sent_requests_path %>

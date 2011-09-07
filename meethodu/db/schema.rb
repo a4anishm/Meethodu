@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110903004351) do
+ActiveRecord::Schema.define(:version => 20110906091712) do
 
   create_table "donor_requests", :force => true do |t|
     t.integer  "project_id"
@@ -22,21 +22,21 @@ ActiveRecord::Schema.define(:version => 20110903004351) do
   end
 
   create_table "friendship_sent_requests", :force => true do |t|
-    t.integer  "from_user"
-    t.integer  "to_user"
     t.string   "message"
     t.date     "sent_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "from_user"
+    t.string   "to_user"
   end
 
   create_table "friendships", :force => true do |t|
-    t.integer  "friend1_id"
-    t.integer  "friend2_id"
     t.date     "begin_date"
     t.string   "how_do_you_know"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "friend1_id"
+    t.string   "friend2_id"
   end
 
   create_table "project_fundings", :force => true do |t|

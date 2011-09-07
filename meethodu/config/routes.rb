@@ -1,4 +1,25 @@
 Meethodu::Application.routes.draw do
+
+
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    delete 'logout' => :destroy
+  end
+
+  controller :profile do
+    get 'profile' => :show
+  end
+
+  controller :friendship_sent_requests do
+    post 'add_friend' => :create
+    delete 'reject_friend' => :destroy
+  end
+
+  controller :logout do
+    get 'logout' => :new
+  end
+
   resources :friendship_sent_requests
 
   resources :donor_requests

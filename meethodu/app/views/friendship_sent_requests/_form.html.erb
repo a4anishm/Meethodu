@@ -1,0 +1,26 @@
+<%= form_for(@friendship_sent_request) do |f| %>
+  <% if @friendship_sent_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@friendship_sent_request.errors.count, "error") %> prohibited this friendship_sent_request from being saved:</h2>
+
+      <ul>
+      <% @friendship_sent_request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+        <%= label_tag(:enter_your_friend_UserID) %>
+        <%= text_field_tag(:friend_request_user_field_id) %>
+  </div>
+  <div class="field">
+        <%= label_tag(:enter_introduction_message) %>
+        <%= text_field_tag(:friend_request_message_field_id) %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
