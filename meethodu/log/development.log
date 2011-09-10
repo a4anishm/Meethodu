@@ -13544,3 +13544,187 @@ Started GET "/profile" for 127.0.0.1 at Tue Sep 06 05:18:32 -0700 2011
   [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')
 Rendered profile/show.html.erb within layouts/application (27.9ms)
 Completed 200 OK in 82ms (Views: 70.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/5/edit" for 127.0.0.1 at Tue Sep 06 05:24:41 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered users/_form.html.erb (84.9ms)
+Rendered users/edit.html.erb within layouts/application (90.9ms)
+Completed 200 OK in 105ms (Views: 94.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users/5" for 127.0.0.1 at Tue Sep 06 05:24:44 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"5", "user"=>{"city"=>"santa clara", "interests"=>"uhuu", "about_me"=>"achaa", "area_code"=>"789", "zipcode"=>"95131", "password_confirmation"=>"[FILTERED]", "gender"=>"male", "phone_number"=>"5678908", "user_id"=>"mee1", "last_name"=>"meea", "date_of_birth(1i)"=>"2011", "address_line1"=>"456 udsfg", "password"=>"[FILTERED]", "date_of_birth(2i)"=>"9", "first_name"=>"mee", "address_line2"=>"asdf", "state"=>"ca", "email_id"=>"mee1@gmail.com", "date_of_birth(3i)"=>"6"}}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."user_id" = 'mee1') AND ("users".id <> 5) LIMIT 1[0m
+Rendered users/_form.html.erb (23.7ms)
+Rendered users/edit.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 68ms (Views: 33.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/5" for 127.0.0.1 at Tue Sep 06 05:24:51 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"5", "user"=>{"city"=>"santa clara", "interests"=>"uhuu", "about_me"=>"achaa", "area_code"=>"789", "zipcode"=>"95131", "password_confirmation"=>"[FILTERED]", "gender"=>"male", "phone_number"=>"5678908", "user_id"=>"mee1", "last_name"=>"meea", "date_of_birth(1i)"=>"2011", "address_line1"=>"456 udsfg", "password"=>"[FILTERED]", "date_of_birth(2i)"=>"9", "first_name"=>"mee", "address_line2"=>"asdf", "state"=>"ca", "email_id"=>"mee1@gmail.com", "date_of_birth(3i)"=>"6"}}
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."user_id" = 'mee1') AND ("users".id <> 5) LIMIT 1[0m
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 37ms
+
+
+Started GET "/users/5" for 127.0.0.1 at Tue Sep 06 05:24:51 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered users/show.html.erb within layouts/application (57.1ms)
+Completed 200 OK in 72ms (Views: 60.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at Tue Sep 06 05:24:58 -0700 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Completed   in 10ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/users_controller.rb:21:in `show'
+  app/controllers/users_controller.rb:7:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (23.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.9ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Tue Sep 06 05:25:06 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')[0m
+Rendered profile/show.html.erb within layouts/application (68.9ms)
+Completed 200 OK in 84ms (Views: 71.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Tue Sep 06 05:25:14 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')[0m
+Rendered profile/show.html.erb within layouts/application (65.3ms)
+Completed 200 OK in 79ms (Views: 67.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Tue Sep 06 05:25:17 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')[0m
+Rendered profile/show.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 41ms (Views: 29.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Tue Sep 06 05:25:20 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')[0m
+Rendered profile/show.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 43ms (Views: 29.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Tue Sep 06 05:25:22 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')[0m
+Rendered profile/show.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 43ms (Views: 29.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Tue Sep 06 05:25:26 -0700 2011
+  Processing by LogoutController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at Tue Sep 06 05:25:26 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at Tue Sep 06 05:25:29 -0700 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"login", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user_text_id"=>"mee1", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 63ms
+
+
+Started GET "/profile" for 127.0.0.1 at Tue Sep 06 05:25:29 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')
+Rendered profile/show.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 47ms (Views: 31.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Tue Sep 06 05:26:37 -0700 2011
+  Processing by LogoutController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at Tue Sep 06 05:26:37 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at Tue Sep 06 05:26:51 -0700 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"login", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user_text_id"=>"select * from user", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'select * from user' LIMIT 1[0m
+Redirected to http://localhost:3000/login
+Completed 302 Found in 22ms
+
+
+Started GET "/login" for 127.0.0.1 at Tue Sep 06 05:26:51 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at Thu Sep 08 02:42:09 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at Thu Sep 08 02:42:12 -0700 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"login", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user_text_id"=>"mee1", "password"=>"[FILTERED]"}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 202ms
+
+
+Started GET "/profile" for 127.0.0.1 at Thu Sep 08 02:42:12 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')
+Rendered profile/show.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 57ms (Views: 43.8ms | ActiveRecord: 1.5ms)
