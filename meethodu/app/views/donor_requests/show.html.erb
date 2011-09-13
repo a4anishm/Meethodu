@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
-
+<% if flash[:notice] %>
+    <p id="error_notice"><%= flash[:notice] %></p>
+<% end %>
 <p>
   <b>Project:</b>
   <%= @donor_request.project_id %>
@@ -20,6 +21,21 @@
   <%= @donor_request.sent_money %>
 </p>
 
+<p>
+  <b>seen_by_receiver:</b>
+  <%= @donor_request.seen_by_receiver %>
+</p>
+
+<p>
+  <b>seen_by_sender:</b>
+  <%= @donor_request.seen_by_sender %>
+</p>
+
+<p>
+  <b>Sent money:</b>
+  <%= @donor_request.sent_money %>
+</p>
+
 
 <%= link_to 'Edit', edit_donor_request_path(@donor_request) %> |
-<%= link_to 'Back', donor_requests_path %>
+<%= link_to 'Back', my_contributions_path %>

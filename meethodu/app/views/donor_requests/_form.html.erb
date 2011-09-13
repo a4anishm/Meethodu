@@ -1,7 +1,7 @@
 <%= form_for(@donor_request) do |f| %>
   <% if @donor_request.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@donor_request.errors.count, "error") %> prohibited this donor_request from being saved:</h2>
+      <h2><%= pluralize(@donor_request.errors.count, "error") %> prohibited this contribution request from being saved:</h2>
 
       <ul>
       <% @donor_request.errors.full_messages.each do |msg| %>
@@ -12,22 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :project_id %><br />
-    <%= f.text_field :project_id %>
-  </div>
-  <div class="field">
-    <%= f.label :sent %><br />
+    <% if @donor_request.receiver_accepted %>
+    <%= f.label :Your_sponsor_accepted_your_request_Did_you_already_send_money? %><br />
     <%= f.check_box :sent %>
+    <% end %>
   </div>
+
   <div class="field">
-    <%= f.label :sent_date %><br />
-    <%= f.date_select :sent_date %>
-  </div>
-  <div class="field">
-    <%= f.label :sent_money %><br />
+    <%= f.label :Amount_Sent %><br />
     <%= f.text_field :sent_money %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= button_to('Update') %>
   </div>
 <% end %>

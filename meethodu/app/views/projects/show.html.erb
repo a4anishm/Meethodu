@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
+<% if flash[:notice] %>
+    <p id="info_notice"><%= flash[:notice] %></p>
+<% end %>
+
+<table cellspacing="1" cellpadding="5" align="center" style="margin-top: 5px; margin-bottom: 5px;">
+<tr>
+  <td width="75%" valign="top">
 
 <p>
   <b>Name:</b>
@@ -34,6 +40,34 @@
   <b>Need referral:</b>
   <%= @project.need_referral %>
 </p>
+</td>
+
+<td valign="top">
+
+<div class="donate_box">
+
+  <%= form_tag({:controller => "donor_requests" , :action => "create" } ,:method=>"post") do %>
+    <fieldset>
+      <legend id="mee_legend"> Give a loan to this project</legend>
+
+      <div>
+        <%= label_tag(:How_much_amount_will_you_loan_to_this_project?) %>
+        <%= text_field_tag(:loan_amount) %>
+        <%= hidden_field(:project, :id)  %>
+      </div>
+      <br></br>
+      <div>
+        <%= button_to('Contribute!') %>
+      </div>
+    </fieldset>
+  <% end %>
+
+</div>
+
+</td>
+
+</tr>
+</table>
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

@@ -20,8 +20,19 @@ Meethodu::Application.routes.draw do
     get 'logout' => :new
   end
 
+  controller :projects do
+    get 'my_projects' => :my_projects
+  end
+
+  controller :my_contributions do
+    get 'my_contributions' => :get_my_contributions
+  end
   resources :friendship_sent_requests
 
+  controller :donor_requests do
+    post '/donor_requests/accept' => :accept
+    post '/donor_requests/reject' => :reject
+  end
   resources :donor_requests
 
   resources :receiver_requests
@@ -29,6 +40,7 @@ Meethodu::Application.routes.draw do
   resources :project_fundings
 
   resources :projects
+
 
   resources :friendships
 

@@ -75,11 +75,11 @@
 	float: left;
 }
 
-#mee_user .mee_line_odd{
+.mee_line_odd{
 	background: #B5E61D;
 }
 
-#mee_user .mee_line_even{
+.mee_line_even{
 	background: #FFFFFF;
 }
 

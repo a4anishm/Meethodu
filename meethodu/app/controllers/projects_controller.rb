@@ -41,13 +41,13 @@ class ProjectsController < ApplicationController
   # POST /projects.xml
   def create
     @project = Project.new(params[:project])
-
+    @project.user_id = session[:user_text_id]
     respond_to do |format|
-      if @project.save
+      if (@project.user_id!=0 && @project.save )
         format.html { redirect_to(@project, :notice => 'Project was successfully created.') }
         format.xml  { render :xml => @project, :status => :created, :location => @project }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "new", :notice => 'Project was not created.' }
         format.xml  { render :xml => @project.errors, :status => :unprocessable_entity }
       end
     end
@@ -59,11 +59,11 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
 
     respond_to do |format|
-      if @project.update_attributes(params[:project])
+      if (@project.user_id!=0 && @project.user_id == session[:user_text_id] && @project.update_attributes(params[:project]) )
         format.html { redirect_to(@project, :notice => 'Project was successfully updated.') }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "edit", :notice => 'Project was not updated.' }
         format.xml  { render :xml => @project.errors, :status => :unprocessable_entity }
       end
     end
@@ -79,5 +79,10 @@ class ProjectsController < ApplicationController
       format.html { redirect_to(projects_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def my_projects
+    @my_projects = Project.where("user_id = ?",session[:user_text_id])
+    
   end
 end

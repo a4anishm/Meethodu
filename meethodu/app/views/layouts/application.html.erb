@@ -17,6 +17,12 @@
                 <%elsif (session[:login_status] == 1)%>
                     <%= link_to 'Home', profile_path %>
                     <%= link_to 'Friends', profile_path %>
+                    <%= link_to 'All Projects', projects_path %>
+                    <%= link_to 'Create Project', new_project_path %>
+                    <%= link_to 'My Projects', my_projects_path%>
+                    <%= link_to 'My Contributions', my_contributions_path%>
+                    <% @login_user=User.find(session[:user_id]) %>
+                    <%= link_to 'Edit Profile', edit_user_path(@login_user) %>
                     <%= link_to 'Logout', logout_path %>
                 <%end %>
           </p>

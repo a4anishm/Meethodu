@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>User</th>
     <th>Summary</th>
     <th>Description</th>
     <th>Minimum budget</th>
@@ -15,8 +16,10 @@
   </tr>
 
 <% @projects.each do |project| %>
-  <tr>
+  <tr  class="<%= cycle('mee_line_odd', 'mee_line_even') %>" >
+
     <td><%= project.name %></td>
+    <td><%= project.user_id %></td>
     <td><%= project.summary %></td>
     <td><%= project.description %></td>
     <td><%= project.minimum_budget %></td>
