@@ -51,7 +51,7 @@ class DonorRequestsController < ApplicationController
 
     respond_to do |format|
       if @donor_request.save
-        format.html { redirect_to("/projects/#{params[:project][:id]}", :notice => "Thanks for your contribution. The project sponsor will soon contact you personally. Please read this carefuly. After you send your intention to contribute, the project sponsor(most likely your friend) will contact you to find a best way to send your money. After you send your money, please click on 'Money Sent' check box in your donation pages. Once the receiver gets his money and clicks received check box in his page, the transaction is treated as complete. After the duration of your project, your friend will contact you to give your money back.") }
+        format.html { redirect_to("/projects/#{params[:project][:id]}", :notice => "Thanks for your contribution. The project sponsor will soon contact you personally. Please read this carefuly. After you send your intention to contribute, the project sponsor(most likely your friend) will contact you to find a best way to send your money. After you send your money, please click on 'Money Sent' check box in your donation pages. Once the receiver gets his money and clicks received check box in his page, the transaction is treated as complete. After the project is complete, your friend will contact you to give your money back.") }
         format.xml  { render :xml => @donor_request, :status => :created, :location => @donor_request }
       else
         format.html { redirect_to("/projects/#{params[:project][:id]}", :notice => 'Sorry, You should enter an amount to contribute') }

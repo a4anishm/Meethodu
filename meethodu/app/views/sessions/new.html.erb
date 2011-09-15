@@ -1,0 +1,53 @@
+<table cellspacing="1" cellpadding="5" align="center" width="94%" style="margin-top: 40px; margin-bottom: 40px;">
+<tr>
+<td width="75%" valign="top">
+<div class="mee_login_text">
+  <h1>Hi!</h1>
+  <br></br>
+  <p>Thanks for stopping by to contribute your part and make a great impact!</p>
+  <br></br>
+  <p>This will really go a long way in proving how a small contribution from everyone can make a huge impact on someone's life</p>
+  <br></br>
+  <p>We are really excited that you are here with us. Please contribute to these projects sponsored by your friends </p>
+  <br></br>
+</div>
+</td>
+<td valign="top">
+<div class="mee_login_form">
+  <% if flash[:alert] %>
+    <p id="error_notice"> <%= flash[:alert] %> </p>
+  <% end %>
+
+  <%= form_tag do %>
+    <fieldset>
+      <br></br>
+      <legend id="mee_legend"> Please Log In </legend>
+
+      <div>
+        <%= label_tag(:Username) %>
+        <%= text_field_tag(:user_text_id) %>
+      </div>
+      <br></br>
+      <div>
+        <%= label_tag(:Password) %>
+        <%= password_field_tag(:password) %>
+      </div>
+      <br></br>
+      <div>
+        <%= submit_tag "login" %>
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <div class="mee_sign_up_link" >
+      <%= link_to 'Sign Up', new_user_path %>
+      </div>
+    </fieldset>
+  <% end %>
+
+</div>
+</td>
+</tr>
+
+
+</table>

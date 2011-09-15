@@ -1,0 +1,148 @@
+  <% if flash[:alert] %>
+    <p id="info_notice"> <%= flash[:alert] %> </p>
+  <% end %>
+
+<table cellspacing="1" cellpadding="5" align="center" style="margin-top: 5px; margin-bottom: 5px;">
+<tr>
+<td width="15%" valign="top">
+<fieldset>
+<legend id="mee_legend">Friends</legend>
+    <% if @friends.empty? %>
+    <p>No Friends to display. Please add friends from box on the right of this page.</p>
+    <% else %>
+    <% @friends.each do |friend_user|%>
+    <p><%= link_to "#{friend_user.last_name}, #{friend_user.first_name}", friend_user%></p>
+    <% end %>
+    <% end %>
+</fieldset>
+</td>
+
+
+
+
+
+
+
+
+<td width="60%" valign="top">
+<p>
+  <b>First name:</b>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <b>About me:</b>
+  <%= @user.about_me %>
+</p>
+
+
+<p>
+  <b>Gender:</b>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <b>Address line1:</b>
+  <%= @user.address_line1 %>
+</p>
+
+<p>
+  <b>Address line2:</b>
+  <%= @user.address_line2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @user.city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @user.state %>
+</p>
+
+<p>
+  <b>Zipcode:</b>
+  <%= @user.zipcode %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @user.user_id %>
+</p>
+
+<p>
+  <b>Interests:</b>
+  <%= @user.interests %>
+</p>
+</td>
+
+<td  valign="top">
+<div class="mee_add_friend_box">
+  <%= form_tag({:controller => "friendship_sent_requests" , :action => "create" } ,:method=>"post") do %>
+    <fieldset>
+      <legend id="mee_legend"> Add a friend </legend>
+      <div>
+        <%= label_tag(:enter_your_friend_UserID) %>
+        <%= text_field_tag(:friend_request_user_field_id) %>
+      </div>
+      <div>
+        <%= label_tag(:enter_introduction_message) %>
+        <%= text_field_tag(:friend_request_message_field_id) %>
+      </div>
+      <br></br>
+      <div>
+        <%= button_to('Add Friend') %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>
+
+<div class="mee_incoming_friend_box"> 
+    <fieldset>
+      <legend id="mee_legend"> Incoming friend requests </legend>
+      <table>
+      <% @incoming_friend_users.each do |in_user| %>
+          <tr class="<%= cycle('mee_line_odd', 'mee_line_even') %>" >
+          <p> <%= in_user.first_name %>,<%=in_user.last_name %> wants to be friends with you.</p>
+          <%= form_tag({:controller => "friendships" , :action => "create", :id => in_user.user_id  } ,:method=>"post") do %>
+          <%= button_to('Accept') %>
+          <% end %>
+          <%= form_tag({:controller => "friendship_sent_requests" , :action => "destroy", :id => in_user.user_id } ,:method=>"delete") do %>
+          <%= button_to('Reject') %>
+          <% end %>
+          </tr>
+      <% end %>
+      </table>
+    </fieldset>
+</div>
+
+<div class="mee_incoming_friend_box">
+    <fieldset>
+      <legend id="mee_legend"> Incoming Donation requests </legend>
+      <table>
+      <% @incoming_donation_requests.each do |in_request| %>
+          <tr class="<%= cycle('mee_line_odd', 'mee_line_even') %>" >
+          <% @user_name=User.find_by_user_id(in_request.sent_user_id) %>
+          <% @project=Project.find( in_request.project_id) %>
+          <p> <%=  @user_name.first_name %>,<%=@user_name.last_name %>wants to contribute to your project <%= @project.name%></p>
+          <%= form_tag({:controller => "donor_requests" , :action => "accept", :id => in_request.id  } ,:method=>"post") do %>
+          <%= button_to('Accept') %>
+          <% end %>
+          <%= form_tag({:controller => "donor_requests" , :action => "reject", :id => in_request.id } ,:method=>"post") do %>
+          <%= button_to('Reject') %>
+          <% end %>
+          </tr>
+      <% end %>
+      </table>
+    </fieldset>
+</div>
+</td>
+</tr>
+</table>
+

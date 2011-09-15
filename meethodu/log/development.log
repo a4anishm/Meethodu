@@ -21446,3 +21446,1281 @@ Started GET "/projects/20" for 127.0.0.1 at Fri Sep 09 21:19:03 -0700 2011
   [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
 Rendered projects/show.html.erb within layouts/application (167.5ms)
 Completed 200 OK in 182ms (Views: 174.3ms | ActiveRecord: 58.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Fri Sep 09 21:25:34 -0700 2011
+  Processing by LogoutController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 09 21:25:34 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 19ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at Fri Sep 09 21:26:01 -0700 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"login", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user_text_id"=>"mee1", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 124ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:26:02 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1[0m
+  [1m[35mDonorRequest Load (0.4ms)[0m  SELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'mee1')
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 70ms (Views: 44.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Fri Sep 09 21:26:05 -0700 2011
+  Processing by LogoutController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 09 21:26:05 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 09 21:30:47 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (99.4ms)
+Rendered users/new.html.erb within layouts/application (105.1ms)
+Completed 200 OK in 121ms (Views: 109.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at Fri Sep 09 21:34:38 -0700 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user"=>{"city"=>"ca", "interests"=>"chatting", "about_me"=>"<p>This is test uset for anish</>", "area_code"=>"789", "zipcode"=>"95131", "password_confirmation"=>"[FILTERED]", "gender"=>"male", "phone_number"=>"5678908", "user_id"=>"mee1", "last_name"=>"Muppalaneni", "date_of_birth(1i)"=>"2007", "address_line1"=>"1235 mayberrylane ", "password"=>"[FILTERED]", "date_of_birth(2i)"=>"2", "first_name"=>"Anish", "address_line2"=>"san jose", "state"=>"ca", "email_id"=>"a4anishm@gmail.com", "date_of_birth(3i)"=>"29"}}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."user_id" = 'mee1') LIMIT 1[0m
+Rendered users/_form.html.erb (26.8ms)
+Rendered users/new.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 74ms (Views: 37.5ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at Fri Sep 09 21:34:50 -0700 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user"=>{"city"=>"ca", "interests"=>"chatting", "about_me"=>"<p>This is test uset for anish</>", "area_code"=>"789", "zipcode"=>"95131", "password_confirmation"=>"[FILTERED]", "gender"=>"male", "phone_number"=>"5678908", "user_id"=>"a4anishm", "last_name"=>"Muppalaneni", "date_of_birth(1i)"=>"2007", "address_line1"=>"1235 mayberrylane ", "password"=>"[FILTERED]", "date_of_birth(2i)"=>"3", "first_name"=>"Anish", "address_line2"=>"san jose", "state"=>"", "email_id"=>"a4anishm@gmail.com", "date_of_birth(3i)"=>"1"}}
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE ("users"."user_id" = 'a4anishm') LIMIT 1
+Rendered users/_form.html.erb (23.8ms)
+Rendered users/new.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 68ms (Views: 34.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at Fri Sep 09 21:35:28 -0700 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user"=>{"city"=>"ca", "interests"=>"chatting", "about_me"=>"<p>This is test uset for anish</>", "area_code"=>"789", "zipcode"=>"95131", "password_confirmation"=>"[FILTERED]", "gender"=>"male", "phone_number"=>"5678908", "user_id"=>"a4anishm", "last_name"=>"Muppalaneni", "date_of_birth(1i)"=>"2007", "address_line1"=>"1235 mayberrylane ", "password"=>"[FILTERED]", "date_of_birth(2i)"=>"3", "first_name"=>"Anish", "address_line2"=>"san jose", "state"=>"ca", "email_id"=>"a4anishm@gmail.com", "date_of_birth(3i)"=>"1"}}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."user_id" = 'a4anishm') LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "users" ("state", "hashed_password", "updated_at", "phone_number", "salt", "first_name", "address_line1", "last_name", "password", "about_me", "interests", "zipcode", "address_line2", "email_id", "gender", "city", "date_of_birth", "user_id", "created_at", "area_code") VALUES ('ca', NULL, '2011-09-10 04:35:28.738772', '5678908', NULL, 'Anish', '1235 mayberrylane ', 'Muppalaneni', 'a', '<p>This is test uset for anish</>', 'chatting', 95131, 'san jose', 'a4anishm@gmail.com', 'male', 'ca', '2007-03-01', 'a4anishm', '2011-09-10 04:35:28.738772', '789')
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 91ms
+
+
+Started GET "/users/9" for 127.0.0.1 at Fri Sep 09 21:35:28 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered users/show.html.erb within layouts/application (69.7ms)
+Completed 200 OK in 86ms (Views: 74.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:37:56 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1[0m
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 70ms (Views: 43.4ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/add_friend" for 127.0.0.1 at Fri Sep 09 21:38:39 -0700 2011
+  Processing by FriendshipSentRequestsController#create as HTML
+  Parameters: {"friend_request_message_field_id"=>"anish", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "friend_request_user_field_id"=>"unknown"}
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "friendship_sent_requests" ("updated_at", "from_user", "created_at", "message", "sent_date", "to_user") VALUES ('2011-09-10 04:38:40.118038', 'a4anishm', '2011-09-10 04:38:40.118038', 'anish', '2011-09-10 04:38:40.117443', 'unknown')
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 87ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:38:40 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1[0m
+  [1m[35mDonorRequest Load (0.3ms)[0m  SELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (71.5ms)
+Completed 200 OK in 97ms (Views: 74.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:39:04 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (70.9ms)
+Completed 200 OK in 97ms (Views: 74.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:39:06 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1[0m
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (81.7ms)
+Completed 200 OK in 105ms (Views: 84.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:39:08 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mDonorRequest Load (0.3ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 55ms (Views: 31.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Fri Sep 09 21:39:40 -0700 2011
+  Processing by LogoutController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 09 21:39:40 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at Fri Sep 09 21:39:45 -0700 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"login", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user_text_id"=>"a4anishm", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 125ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:39:45 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 50ms (Views: 30.1ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/add_friend" for 127.0.0.1 at Fri Sep 09 21:40:32 -0700 2011
+  Processing by FriendshipSentRequestsController#create as HTML
+  Parameters: {"friend_request_message_field_id"=>"hi mee1 ,this is form a4anishm", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "friend_request_user_field_id"=>"mee1"}
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "friendship_sent_requests" ("updated_at", "to_user", "created_at", "message", "sent_date", "from_user") VALUES ('2011-09-10 04:40:32.793137', 'mee1', '2011-09-10 04:40:32.793137', 'hi mee1 ,this is form a4anishm', '2011-09-10 04:40:32.792587', 'a4anishm')[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 29ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:40:32 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (72.5ms)
+Completed 200 OK in 97ms (Views: 76.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Fri Sep 09 21:40:40 -0700 2011
+  Processing by LogoutController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 09 21:40:40 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 10ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at Fri Sep 09 21:40:42 -0700 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"login", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user_text_id"=>"mee1", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 27ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:40:42 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'mee1')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (86.4ms)
+Completed 200 OK in 111ms (Views: 88.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Fri Sep 09 21:40:54 -0700 2011
+  Processing by LogoutController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 3ms
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 09 21:40:54 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at Fri Sep 09 21:40:55 -0700 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"login", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user_text_id"=>"mee1", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 32ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:40:55 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1[0m
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'mee1')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (86.4ms)
+Completed 200 OK in 112ms (Views: 88.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Fri Sep 09 21:40:58 -0700 2011
+  Processing by LogoutController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 09 21:40:58 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at Fri Sep 09 21:41:04 -0700 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"login", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user_text_id"=>"a4anishm", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 38ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:41:05 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')[0m
+  [1m[35mSQL (0.7ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 53ms (Views: 32.6ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/add_friend" for 127.0.0.1 at Fri Sep 09 21:41:29 -0700 2011
+  Processing by FriendshipSentRequestsController#create as HTML
+  Parameters: {"friend_request_message_field_id"=>"hi this is a4anishm, second request", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "friend_request_user_field_id"=>"mee1"}
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "friendship_sent_requests" ("created_at", "message", "sent_date", "updated_at", "from_user", "to_user") VALUES ('2011-09-10 04:41:29.686546', 'hi this is a4anishm, second request', '2011-09-10 04:41:29.685963', '2011-09-10 04:41:29.686546', 'a4anishm', 'mee1')[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 26ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:41:29 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (77.6ms)
+Completed 200 OK in 102ms (Views: 81.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Fri Sep 09 21:41:32 -0700 2011
+  Processing by LogoutController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 09 21:41:32 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/login" for 127.0.0.1 at Fri Sep 09 21:41:34 -0700 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"login", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user_text_id"=>"mee1", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 28ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:41:35 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'mee1')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (84.9ms)
+Completed 200 OK in 110ms (Views: 89.0ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/friendships?id=a4anishm" for 127.0.0.1 at Fri Sep 09 21:42:43 -0700 2011
+  Processing by FriendshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"a4anishm"}
+  [1m[35mFriendshipSentRequest Load (0.2ms)[0m  SELECT "friendship_sent_requests".* FROM "friendship_sent_requests" WHERE "friendship_sent_requests"."from_user" = 'a4anishm' AND "friendship_sent_requests"."to_user" = 'mee1' LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM "friendship_sent_requests" WHERE "friendship_sent_requests"."id" = 38[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "friendships" ("created_at", "begin_date", "friend2_id", "how_do_you_know", "friend1_id", "updated_at") VALUES ('2011-09-10 04:42:43.941995', '2011-09-10 04:42:43.902957', 'mee1', NULL, 'a4anishm', '2011-09-10 04:42:43.941995')
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "friendships" ("created_at", "begin_date", "friend2_id", "how_do_you_know", "friend1_id", "updated_at") VALUES ('2011-09-10 04:42:43.953069', '2011-09-10 04:42:43.952629', 'a4anishm', NULL, 'mee1', '2011-09-10 04:42:43.953069')[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 149ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:42:43 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'mee1')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (42.8ms)
+Completed 200 OK in 69ms (Views: 44.2ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/reject_friend?id=a4anishm" for 127.0.0.1 at Fri Sep 09 21:42:47 -0700 2011
+  Processing by FriendshipSentRequestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"a4anishm"}
+  [1m[35mFriendshipSentRequest Load (0.2ms)[0m  SELECT "friendship_sent_requests".* FROM "friendship_sent_requests" WHERE "friendship_sent_requests"."from_user" = 'a4anishm' AND "friendship_sent_requests"."to_user" = 'mee1' LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mDELETE FROM "friendship_sent_requests" WHERE "friendship_sent_requests"."id" = 39[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 72ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:42:47 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'mee1')[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (37.1ms)
+Completed 200 OK in 61ms (Views: 39.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at Fri Sep 09 21:42:52 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 45ms (Views: 30.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:43:35 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'mee1')[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 62ms (Views: 37.1ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/add_friend" for 127.0.0.1 at Fri Sep 09 21:43:52 -0700 2011
+  Processing by FriendshipSentRequestsController#create as HTML
+  Parameters: {"friend_request_message_field_id"=>"thi sis from mee1 3rd req", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "friend_request_user_field_id"=>"a4anishm"}
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "friendship_sent_requests" ("message", "created_at", "to_user", "updated_at", "from_user", "sent_date") VALUES ('thi sis from mee1 3rd req', '2011-09-10 04:43:52.372743', 'a4anishm', '2011-09-10 04:43:52.372743', 'mee1', '2011-09-10 04:43:52.372136')
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 29ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:43:52 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1[0m
+  [1m[35mDonorRequest Load (0.4ms)[0m  SELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'mee1')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (78.5ms)
+Completed 200 OK in 103ms (Views: 80.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Fri Sep 09 21:44:01 -0700 2011
+  Processing by LogoutController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 09 21:44:01 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at Fri Sep 09 21:44:09 -0700 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"login", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user_text_id"=>"a4anishm", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 46ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:44:09 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 57ms (Views: 35.5ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/friendships?id=mee1" for 127.0.0.1 at Fri Sep 09 21:44:18 -0700 2011
+  Processing by FriendshipsController#create as HTML
+  Parameters: {"authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"mee1"}
+  [1m[35mFriendshipSentRequest Load (0.2ms)[0m  SELECT "friendship_sent_requests".* FROM "friendship_sent_requests" WHERE "friendship_sent_requests"."from_user" = 'mee1' AND "friendship_sent_requests"."to_user" = 'a4anishm' LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM "friendship_sent_requests" WHERE "friendship_sent_requests"."id" = 40[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "friendships" ("updated_at", "created_at", "friend2_id", "friend1_id", "how_do_you_know", "begin_date") VALUES ('2011-09-10 04:44:18.437945', '2011-09-10 04:44:18.437945', 'a4anishm', 'mee1', NULL, '2011-09-10 04:44:18.410384')
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "friendships" ("updated_at", "created_at", "friend2_id", "friend1_id", "how_do_you_know", "begin_date") VALUES ('2011-09-10 04:44:18.447860', '2011-09-10 04:44:18.447860', 'mee1', 'a4anishm', NULL, '2011-09-10 04:44:18.447114')[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 63ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:44:18 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mDonorRequest Load (0.7ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (79.5ms)
+Completed 200 OK in 108ms (Views: 82.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at Fri Sep 09 21:45:04 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (76.7ms)
+Completed 200 OK in 96ms (Views: 81.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:45:36 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (84.8ms)
+Completed 200 OK in 111ms (Views: 88.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/9/edit" for 127.0.0.1 at Fri Sep 09 21:45:44 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered users/_form.html.erb (105.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/edit.html.erb within layouts/application (116.6ms)
+Completed 200 OK in 134ms (Views: 123.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/9/edit" for 127.0.0.1 at Fri Sep 09 21:46:13 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered users/_form.html.erb (49.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/edit.html.erb within layouts/application (93.0ms)
+Completed 200 OK in 116ms (Views: 101.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users/9" for 127.0.0.1 at Fri Sep 09 21:46:25 -0700 2011
+  Processing by UsersController#update as HTML
+  Parameters: {"commit"=>"Update User", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"9", "user"=>{"city"=>"ca", "interests"=>"chatting,dating", "about_me"=>"<p>This is test uset for anish</>", "area_code"=>"789", "zipcode"=>"95131", "password_confirmation"=>"[FILTERED]", "gender"=>"male", "phone_number"=>"5678908", "user_id"=>"a4anishm", "last_name"=>"Muppalaneni", "date_of_birth(1i)"=>"2007", "address_line1"=>"1235 mayberrylane ", "password"=>"[FILTERED]", "date_of_birth(2i)"=>"3", "first_name"=>"Anish", "address_line2"=>"san jose", "state"=>"ca", "email_id"=>"a4anishm@gmail.com", "date_of_birth(3i)"=>"1"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."user_id" = 'a4anishm') AND ("users".id <> 9) LIMIT 1[0m
+  [1m[35mAREL (0.6ms)[0m  UPDATE "users" SET "interests" = 'chatting,dating', "updated_at" = '2011-09-10 04:46:26.061829' WHERE "users"."id" = 9
+Redirected to http://localhost:3000/users/9
+Completed 302 Found in 65ms
+
+
+Started GET "/users/9" for 127.0.0.1 at Fri Sep 09 21:46:26 -0700 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered users/show.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 109ms (Views: 31.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/9/edit" for 127.0.0.1 at Fri Sep 09 21:46:51 -0700 2011
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/_form.html.erb (44.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered users/edit.html.erb within layouts/application (52.5ms)
+Completed 200 OK in 117ms (Views: 57.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:46:52 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1[0m
+  [1m[35mDonorRequest Load (0.3ms)[0m  SELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 64ms (Views: 39.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Sep 09 21:46:56 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (1.5ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered projects/index.html.erb within layouts/application (167.1ms)
+Completed 200 OK in 184ms (Views: 171.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:47:45 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1[0m
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (72.5ms)
+Completed 200 OK in 97ms (Views: 75.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Sep 09 21:47:52 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (2.1ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered projects/index.html.erb within layouts/application (133.8ms)
+Completed 200 OK in 147ms (Views: 137.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at Fri Sep 09 21:49:08 -0700 2011
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (91.1ms)
+Completed 200 OK in 104ms (Views: 95.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Sep 09 21:49:16 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (1.6ms)[0m  [1mSELECT "projects".* FROM "projects"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered projects/index.html.erb within layouts/application (126.9ms)
+Completed 200 OK in 140ms (Views: 131.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at Fri Sep 09 21:49:22 -0700 2011
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (24.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/new.html.erb within layouts/application (106.6ms)
+Completed 200 OK in 119ms (Views: 110.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/my_projects" for 127.0.0.1 at Fri Sep 09 21:49:33 -0700 2011
+  Processing by ProjectsController#my_projects as HTML
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE (user_id = 'a4anishm')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/my_projects.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 51ms (Views: 43.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Sep 09 21:49:39 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (1.6ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/index.html.erb within layouts/application (126.8ms)
+Completed 200 OK in 197ms (Views: 131.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at Fri Sep 09 21:49:47 -0700 2011
+  Processing by ProjectsController#new as HTML
+Rendered projects/_form.html.erb (75.6ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered projects/new.html.erb within layouts/application (120.9ms)
+Completed 200 OK in 133ms (Views: 124.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/projects" for 127.0.0.1 at Fri Sep 09 21:51:17 -0700 2011
+  Processing by ProjectsController#create as HTML
+  Parameters: {"commit"=>"Create Project", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "project"=>{"name"=>"harvesting machines", "minimum_budget"=>"3000", "maximum_budget"=>"5000", "days_to_return_money"=>"30", "summary"=>"i need harvesting machines", "description"=>"this is for our worker rangamma. she need sit", "need_referral"=>"0"}}
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "projects" ("days_to_return_money", "updated_at", "description", "project_id", "maximum_budget", "name", "summary", "user_id", "created_at", "minimum_budget", "need_referral") VALUES (30, '2011-09-10 04:51:17.734487', 'this is for our worker rangamma. she need sit', NULL, 5000, 'harvesting machines', 'i need harvesting machines', 'a4anishm', '2011-09-10 04:51:17.734487', 3000, 'f')[0m
+Redirected to http://localhost:3000/projects/21
+Completed 302 Found in 44ms
+
+
+Started GET "/projects/21" for 127.0.0.1 at Fri Sep 09 21:51:17 -0700 2011
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 21 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (94.3ms)
+Completed 200 OK in 106ms (Views: 98.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Sep 09 21:51:39 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (1.8ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/index.html.erb within layouts/application (130.4ms)
+Completed 200 OK in 190ms (Views: 135.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects/5" for 127.0.0.1 at Fri Sep 09 21:51:47 -0700 2011
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (107.1ms)
+Completed 200 OK in 119ms (Views: 111.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Sep 09 21:52:17 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (1.8ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/index.html.erb within layouts/application (128.1ms)
+Completed 200 OK in 144ms (Views: 132.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects/21" for 127.0.0.1 at Fri Sep 09 21:52:20 -0700 2011
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 21 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (93.6ms)
+Completed 200 OK in 106ms (Views: 97.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Sep 09 21:52:28 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (1.7ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/index.html.erb within layouts/application (134.2ms)
+Completed 200 OK in 149ms (Views: 138.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects/21/edit" for 127.0.0.1 at Fri Sep 09 21:53:26 -0700 2011
+  Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 21 LIMIT 1
+Rendered projects/_form.html.erb (68.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/edit.html.erb within layouts/application (110.0ms)
+Completed 200 OK in 122ms (Views: 113.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Sep 09 21:53:28 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (1.8ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/index.html.erb within layouts/application (126.9ms)
+Completed 200 OK in 142ms (Views: 130.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/projects/20" for 127.0.0.1 at Fri Sep 09 21:53:32 -0700 2011
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (92.1ms)
+Completed 200 OK in 104ms (Views: 95.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/20/edit" for 127.0.0.1 at Fri Sep 09 21:53:39 -0700 2011
+  Processing by ProjectsController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1
+Rendered projects/_form.html.erb (36.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/edit.html.erb within layouts/application (119.8ms)
+Completed 200 OK in 133ms (Views: 124.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Sep 09 21:53:42 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (1.4ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/index.html.erb within layouts/application (151.6ms)
+Completed 200 OK in 167ms (Views: 157.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/projects/20" for 127.0.0.1 at Fri Sep 09 21:54:28 -0700 2011
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (94.1ms)
+Completed 200 OK in 108ms (Views: 98.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects/20" for 127.0.0.1 at Fri Sep 09 21:55:01 -0700 2011
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (135.3ms)
+Completed 200 OK in 148ms (Views: 138.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/donor_requests" for 127.0.0.1 at Fri Sep 09 21:55:06 -0700 2011
+  Processing by DonorRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "project"=>{"id"=>"20"}, "loan_amount"=>"1000"}
+  [1m[35mAREL (0.6ms)[0m  INSERT INTO "donor_requests" ("seen_by_sender", "created_at", "seen_by_receiver", "sent_date", "updated_at", "sent_user_id", "receiver_accepted", "project_id", "sent_money", "sent") VALUES ('f', '2011-09-10 04:55:06.720309', 'f', '2011-09-10 04:55:06.719457', '2011-09-10 04:55:06.720309', 'a4anishm', NULL, 20, 1000, 'f')
+Redirected to http://localhost:3000/projects/20
+Completed 302 Found in 91ms
+
+
+Started GET "/projects/20" for 127.0.0.1 at Fri Sep 09 21:55:06 -0700 2011
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (119.5ms)
+Completed 200 OK in 136ms (Views: 123.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/donor_requests" for 127.0.0.1 at Fri Sep 09 21:56:31 -0700 2011
+  Processing by DonorRequestsController#create as HTML
+  Parameters: {"authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "project"=>{"id"=>"20"}, "loan_amount"=>"2000"}
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "donor_requests" ("created_at", "sent_user_id", "seen_by_sender", "sent_money", "project_id", "sent_date", "updated_at", "sent", "seen_by_receiver", "receiver_accepted") VALUES ('2011-09-10 04:56:31.597554', 'a4anishm', 'f', 2000, 20, '2011-09-10 04:56:31.596729', '2011-09-10 04:56:31.597554', 'f', 'f', NULL)[0m
+Redirected to http://localhost:3000/projects/20
+Completed 302 Found in 28ms
+
+
+Started GET "/projects/20" for 127.0.0.1 at Fri Sep 09 21:56:31 -0700 2011
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mProject Load (0.3ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/show.html.erb within layouts/application (87.7ms)
+Completed 200 OK in 159ms (Views: 92.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Sep 09 21:56:35 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (1.4ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/index.html.erb within layouts/application (136.8ms)
+Completed 200 OK in 150ms (Views: 141.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/my_contributions" for 127.0.0.1 at Fri Sep 09 21:56:39 -0700 2011
+  Processing by MyContributionsController#get_my_contributions as HTML
+  [1m[35mDonorRequest Load (0.3ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."sent_user_id" = 'a4anishm'
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered my_contributions/get_my_contributions.html.erb within layouts/application (108.3ms)
+Completed 200 OK in 122ms (Views: 111.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/donor_requests/10" for 127.0.0.1 at Fri Sep 09 21:57:30 -0700 2011
+  Processing by DonorRequestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 10 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered donor_requests/show.html.erb within layouts/application (123.8ms)
+Completed 200 OK in 135ms (Views: 127.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/donor_requests/10/edit" for 127.0.0.1 at Fri Sep 09 21:57:33 -0700 2011
+  Processing by DonorRequestsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 10 LIMIT 1
+Rendered donor_requests/_form.html.erb (69.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered donor_requests/edit.html.erb within layouts/application (108.8ms)
+Completed 200 OK in 122ms (Views: 112.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/my_contributions" for 127.0.0.1 at Fri Sep 09 21:57:40 -0700 2011
+  Processing by MyContributionsController#get_my_contributions as HTML
+  [1m[35mDonorRequest Load (0.3ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."sent_user_id" = 'a4anishm'
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered my_contributions/get_my_contributions.html.erb within layouts/application (105.2ms)
+Completed 200 OK in 119ms (Views: 108.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/donor_requests/10" for 127.0.0.1 at Fri Sep 09 21:57:43 -0700 2011
+  Processing by DonorRequestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 10 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered donor_requests/show.html.erb within layouts/application (99.0ms)
+Completed 200 OK in 111ms (Views: 103.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/donor_requests/10/edit" for 127.0.0.1 at Fri Sep 09 21:57:45 -0700 2011
+  Processing by DonorRequestsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 10 LIMIT 1
+Rendered donor_requests/_form.html.erb (70.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered donor_requests/edit.html.erb within layouts/application (110.8ms)
+Completed 200 OK in 124ms (Views: 116.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/my_contributions" for 127.0.0.1 at Fri Sep 09 21:57:50 -0700 2011
+  Processing by MyContributionsController#get_my_contributions as HTML
+  [1m[35mDonorRequest Load (0.3ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."sent_user_id" = 'a4anishm'
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered my_contributions/get_my_contributions.html.erb within layouts/application (106.4ms)
+Completed 200 OK in 120ms (Views: 109.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/donor_requests/10" for 127.0.0.1 at Fri Sep 09 21:58:16 -0700 2011
+  Processing by DonorRequestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mDonorRequest Load (0.3ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 10 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered donor_requests/show.html.erb within layouts/application (90.9ms)
+Completed 200 OK in 102ms (Views: 94.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/donor_requests/11" for 127.0.0.1 at Fri Sep 09 21:58:28 -0700 2011
+  Processing by DonorRequestsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 11 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered donor_requests/show.html.erb within layouts/application (49.7ms)
+Completed 200 OK in 107ms (Views: 54.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/donor_requests/11/edit" for 127.0.0.1 at Fri Sep 09 21:59:17 -0700 2011
+  Processing by DonorRequestsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 11 LIMIT 1
+Rendered donor_requests/_form.html.erb (15.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered donor_requests/edit.html.erb within layouts/application (94.8ms)
+Completed 200 OK in 106ms (Views: 98.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/my_contributions" for 127.0.0.1 at Fri Sep 09 21:59:25 -0700 2011
+  Processing by MyContributionsController#get_my_contributions as HTML
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."sent_user_id" = 'a4anishm'
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered my_contributions/get_my_contributions.html.erb within layouts/application (123.6ms)
+Completed 200 OK in 138ms (Views: 127.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Fri Sep 09 21:59:41 -0700 2011
+  Processing by LogoutController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 09 21:59:41 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at Fri Sep 09 21:59:42 -0700 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"login", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user_text_id"=>"mee1", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 25ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 21:59:42 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1[0m
+  [1m[35mDonorRequest Load (0.4ms)[0m  SELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'mee1')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (115.3ms)
+Completed 200 OK in 143ms (Views: 117.3ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/donor_requests/accept?id=10" for 127.0.0.1 at Fri Sep 09 22:00:27 -0700 2011
+  Processing by DonorRequestsController#accept as HTML
+  Parameters: {"authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"10"}
+  [1m[36mDonorRequest Load (0.3ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 10 LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "donor_requests" SET "receiver_accepted" = 't', "updated_at" = '2011-09-10 05:00:27.679175', "seen_by_receiver" = 't' WHERE "donor_requests"."id" = 10
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 88ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 22:00:27 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1[0m
+  [1m[35mDonorRequest Load (0.3ms)[0m  SELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'mee1')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mProject Load (0.2ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (129.7ms)
+Completed 200 OK in 154ms (Views: 130.8ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/donor_requests/reject?id=11" for 127.0.0.1 at Fri Sep 09 22:00:33 -0700 2011
+  Processing by DonorRequestsController#reject as HTML
+  Parameters: {"authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"11"}
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 11 LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "donor_requests" SET "receiver_accepted" = 'f', "seen_by_receiver" = 't', "updated_at" = '2011-09-10 05:00:33.121722' WHERE "donor_requests"."id" = 11
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 24ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 22:00:33 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1[0m
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'mee1')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (39.7ms)
+Completed 200 OK in 69ms (Views: 43.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Fri Sep 09 22:00:37 -0700 2011
+  Processing by LogoutController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 09 22:00:37 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at Fri Sep 09 22:00:41 -0700 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"login", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user_text_id"=>"a4anishm", "password"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1[0m
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 112ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 22:00:41 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mDonorRequest Load (0.3ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 58ms (Views: 34.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/my_contributions" for 127.0.0.1 at Fri Sep 09 22:00:49 -0700 2011
+  Processing by MyContributionsController#get_my_contributions as HTML
+  [1m[35mDonorRequest Load (0.3ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."sent_user_id" = 'a4anishm'
+  [1m[36mProject Load (0.8ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered my_contributions/get_my_contributions.html.erb within layouts/application (119.8ms)
+Completed 200 OK in 133ms (Views: 123.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/donor_requests/11" for 127.0.0.1 at Fri Sep 09 22:00:57 -0700 2011
+  Processing by DonorRequestsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 11 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered donor_requests/show.html.erb within layouts/application (91.7ms)
+Completed 200 OK in 105ms (Views: 95.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/donor_requests/11/edit" for 127.0.0.1 at Fri Sep 09 22:00:58 -0700 2011
+  Processing by DonorRequestsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 11 LIMIT 1
+Rendered donor_requests/_form.html.erb (78.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered donor_requests/edit.html.erb within layouts/application (120.0ms)
+Completed 200 OK in 132ms (Views: 124.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/my_contributions" for 127.0.0.1 at Fri Sep 09 22:01:09 -0700 2011
+  Processing by MyContributionsController#get_my_contributions as HTML
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."sent_user_id" = 'a4anishm'
+  [1m[36mProject Load (0.3ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered my_contributions/get_my_contributions.html.erb within layouts/application (105.6ms)
+Completed 200 OK in 119ms (Views: 109.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/donor_requests/10" for 127.0.0.1 at Fri Sep 09 22:01:13 -0700 2011
+  Processing by DonorRequestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 10 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered donor_requests/show.html.erb within layouts/application (92.6ms)
+Completed 200 OK in 105ms (Views: 96.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/donor_requests/10/edit" for 127.0.0.1 at Fri Sep 09 22:01:14 -0700 2011
+  Processing by DonorRequestsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mDonorRequest Load (0.4ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 10 LIMIT 1
+Rendered donor_requests/_form.html.erb (17.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered donor_requests/edit.html.erb within layouts/application (60.0ms)
+Completed 200 OK in 115ms (Views: 63.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/donor_requests/10" for 127.0.0.1 at Fri Sep 09 22:01:51 -0700 2011
+  Processing by DonorRequestsController#update as HTML
+  Parameters: {"donor_request"=>{"sent"=>"1", "sent_money"=>"1000"}, "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"10"}
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 10 LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "donor_requests" SET "sent" = 't', "updated_at" = '2011-09-10 05:01:51.745642' WHERE "donor_requests"."id" = 10[0m
+Redirected to http://localhost:3000/donor_requests/10
+Completed 302 Found in 45ms
+
+
+Started GET "/donor_requests/10" for 127.0.0.1 at Fri Sep 09 22:01:51 -0700 2011
+  Processing by DonorRequestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mDonorRequest Load (0.3ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 10 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered donor_requests/show.html.erb within layouts/application (100.6ms)
+Completed 200 OK in 113ms (Views: 104.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/donor_requests/10/edit" for 127.0.0.1 at Fri Sep 09 22:01:55 -0700 2011
+  Processing by DonorRequestsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mDonorRequest Load (0.3ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 10 LIMIT 1
+Rendered donor_requests/_form.html.erb (16.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered donor_requests/edit.html.erb within layouts/application (95.8ms)
+Completed 200 OK in 109ms (Views: 100.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/donor_requests/10" for 127.0.0.1 at Fri Sep 09 22:01:57 -0700 2011
+  Processing by DonorRequestsController#update as HTML
+  Parameters: {"donor_request"=>{"sent"=>"1", "sent_money"=>"1000"}, "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "id"=>"10"}
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 10 LIMIT 1
+Redirected to http://localhost:3000/donor_requests/10
+Completed 302 Found in 19ms
+
+
+Started GET "/donor_requests/10" for 127.0.0.1 at Fri Sep 09 22:01:57 -0700 2011
+  Processing by DonorRequestsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."id" = 10 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered donor_requests/show.html.erb within layouts/application (127.4ms)
+Completed 200 OK in 139ms (Views: 131.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/my_contributions" for 127.0.0.1 at Fri Sep 09 22:02:30 -0700 2011
+  Processing by MyContributionsController#get_my_contributions as HTML
+  [1m[36mDonorRequest Load (0.3ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" WHERE "donor_requests"."sent_user_id" = 'a4anishm'[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "projects".* FROM "projects" WHERE "projects"."id" = 20 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered my_contributions/get_my_contributions.html.erb within layouts/application (101.9ms)
+Completed 200 OK in 116ms (Views: 104.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 22:02:33 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1[0m
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (75.1ms)
+Completed 200 OK in 102ms (Views: 79.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/my_projects" for 127.0.0.1 at Fri Sep 09 22:02:57 -0700 2011
+  Processing by ProjectsController#my_projects as HTML
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE (user_id = 'a4anishm')[0m
+  [1m[35mProject Load (0.9ms)[0m  SELECT "projects".* FROM "projects" WHERE (user_id = 'a4anishm')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/my_projects.html.erb within layouts/application (96.0ms)
+Completed 200 OK in 106ms (Views: 98.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at Fri Sep 09 22:02:59 -0700 2011
+  Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (1.5ms)[0m  SELECT "projects".* FROM "projects"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered projects/index.html.erb within layouts/application (143.6ms)
+Completed 200 OK in 157ms (Views: 147.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 22:03:02 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mDonorRequest Load (0.3ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 60ms (Views: 35.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 22:03:19 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mDonorRequest Load (0.2ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 63ms (Views: 34.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 22:03:22 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'a4anishm' LIMIT 1
+  [1m[36mDonorRequest Load (0.3ms)[0m  [1mSELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'a4anishm')[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'a4anishm')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'a4anishm')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered profile/show.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 103ms (Views: 35.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Fri Sep 09 22:03:40 -0700 2011
+  Processing by LogoutController#new as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 09 22:03:40 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at Fri Sep 09 22:53:07 -0700 2011
+  Processing by SessionsController#create as HTML
+  Parameters: {"commit"=>"login", "authenticity_token"=>"c/UeI36Gicg5CIvQkjvlQKAd1wbXyy+31RcElmT56tc=", "utf8"=>"\342\234\223", "user_text_id"=>"mee1", "password"=>"[FILTERED]"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1
+Redirected to http://localhost:3000/profile
+Completed 302 Found in 93ms
+
+
+Started GET "/profile" for 127.0.0.1 at Fri Sep 09 22:53:07 -0700 2011
+  Processing by ProfileController#show as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."user_id" = 'mee1' LIMIT 1[0m
+  [1m[35mDonorRequest Load (0.2ms)[0m  SELECT "donor_requests".* FROM "donor_requests" INNER JOIN projects on donor_requests.project_id = projects.id WHERE "donor_requests"."seen_by_receiver" = 'f' AND (projects.user_id = 'mee1')
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" INNER JOIN friendships on friendships.friend1_id = users.user_id WHERE (friendships.friend2_id = 'mee1')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN friendship_sent_requests on friendship_sent_requests.from_user = users.user_id WHERE (friendship_sent_requests.to_user = 'mee1')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered profile/show.html.erb within layouts/application (218.4ms)
+Completed 200 OK in 265ms (Views: 226.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/my_projects" for 127.0.0.1 at Fri Sep 09 22:58:08 -0700 2011
+  Processing by ProjectsController#my_projects as HTML
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE (user_id = 'mee1')[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE (user_id = 'mee1')
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered projects/my_projects.html.erb within layouts/application (194.9ms)
+Completed 200 OK in 207ms (Views: 198.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/my_projects" for 127.0.0.1 at Fri Sep 09 22:58:24 -0700 2011
+  Processing by ProjectsController#my_projects as HTML
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "projects" WHERE (user_id = 'mee1')
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE (user_id = 'mee1')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered projects/my_projects.html.erb within layouts/application (117.8ms)
+Completed 200 OK in 178ms (Views: 127.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/projects/13" for 127.0.0.1 at Fri Sep 09 22:58:26 -0700 2011
+  Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = 13 LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered projects/show.html.erb within layouts/application (571.2ms)
+Completed 200 OK in 585ms (Views: 575.4ms | ActiveRecord: 0.8ms)
