@@ -22724,3 +22724,85 @@ Started GET "/projects/13" for 127.0.0.1 at Fri Sep 09 22:58:26 -0700 2011
   [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
 Rendered projects/show.html.erb within layouts/application (571.2ms)
 Completed 200 OK in 585ms (Views: 575.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/my_projects" for 127.0.0.1 at Fri Sep 16 21:52:31 -0700 2011
+  Processing by ProjectsController#my_projects as HTML
+  [1m[36mSQL (20.7ms)[0m  [1mSELECT COUNT(*) FROM "projects" WHERE (user_id = 'mee1')[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT "projects".* FROM "projects" WHERE (user_id = 'mee1')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (32.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered projects/my_projects.html.erb within layouts/application (1359.9ms)
+Completed 200 OK in 1460ms (Views: 1331.9ms | ActiveRecord: 53.9ms)
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 16 21:52:54 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 18ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 16 21:57:37 -0700 2011
+
+ArgumentError (interning empty string):
+  config/routes.rb:6
+  config/routes.rb:4
+  config/routes.rb:1
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 16 21:57:50 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at Fri Sep 16 22:01:45 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Sep 16 22:01:51 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Sep 16 22:01:56 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 23ms (Views: 22.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 16 22:03:07 -0700 2011
+  Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered users/_form.html.erb (132.3ms)
+Rendered users/new.html.erb within layouts/application (137.4ms)
+Completed 200 OK in 152ms (Views: 141.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Sep 16 22:03:47 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Sep 16 22:03:49 -0700 2011
+  Processing by SessionsController#new as HTML
+Rendered sessions/new.html.erb within layouts/application (105.9ms)
+Completed 200 OK in 899ms (Views: 808.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Sep 16 22:03:53 -0700 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (3973.1ms)
+Rendered users/new.html.erb within layouts/application (4065.9ms)
+Completed 200 OK in 4079ms (Views: 4069.7ms | ActiveRecord: 0.0ms)

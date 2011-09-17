@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   def new
     @account_buttons = Hash.new
     session[:login_status] = 0
+    session[:user_id] = 0
   end
 
   def create
