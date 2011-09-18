@@ -1,4 +1,7 @@
-<p id="notice"><%= notice %></p>
+  <% if flash[:notice] %>
+    <p id="info_notice"> <%= flash[:notice] %> </p>
+  <% end %>
+
 
 <div class="mee_add_friend_box">
 

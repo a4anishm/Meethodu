@@ -92,8 +92,9 @@
     <%= f.text_area :interests, :rows => 1 %>
   </div>
   <div class="field">
-    <%= image_tag "captcha.jpeg" %>
-    <%= f.text_area :captcha, :rows => 1 %>
+    <%= image_tag "captcha.jpeg" %><br />
+    <%= f.label :Enter_above_text %><br />
+    <%= text_field_tag 'captcha' %>
   </div>
 
   <div class="actions">

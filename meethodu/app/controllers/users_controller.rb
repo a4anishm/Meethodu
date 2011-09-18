@@ -51,8 +51,9 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
-    if(params[:user[captcha] != 'upeckshin'])
-      render :action => "new" 
+    if(params[:captcha] != 'upeckshin')
+      redirect_to("/users/new/", :notice => 'Image text you entered is wrong.')
+      # render :action => "new", :alert => 'Image text you entered is wrong.'
       return
     end
     respond_to do |format|
