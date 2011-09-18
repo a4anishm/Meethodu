@@ -7,6 +7,12 @@ Meethodu::Application.routes.draw do
   controller :sessions do
     get 'login' => :new
     post 'login' => :create
+    get 'about' => :about
+    get 'howit' => :howit
+    get 'whyit' => :whyit
+    get 'doesit' => :doesit
+    get 'faq' => :faq
+    get 'contact' => :contact
 
   end
 

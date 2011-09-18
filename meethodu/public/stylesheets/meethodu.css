@@ -176,3 +176,21 @@
     font:  500% sans-serif;
 
 }
+
+#about{
+    Color: #B5E61D;
+    font-weight:  bold;
+    font:  200% sans-serif;
+
+}
+
+#faq_q{
+    Color: #B5E61D;
+    font-weight:  bold;
+    font:  150% sans-serif;
+}
+#faq_alt{
+    Color: #000000;
+    font-weight:  bold;
+    font:  150% sans-serif;
+}

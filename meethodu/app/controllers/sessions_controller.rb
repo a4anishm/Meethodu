@@ -22,7 +22,21 @@ class SessionsController < ApplicationController
   end
 
 
-  def destroy
+  def about
   end
 
+  def howit
+  end
+
+  def whyit
+  end
+
+  def doesit
+  end
+
+  def faq
+  end
+
+  def contact
+  end
 end
