@@ -8,6 +8,7 @@ class ProfileController < ApplicationController
   def show
     if(session[:user_id] == 0)
       redirect_to(login_url)
+      return
     end
     @user = User.find_by_user_id(session[:user_text_id])
     @friends = User.joins("INNER JOIN friendships on friendships.friend1_id = users.user_id").where("friendships.friend2_id = ?", session[:user_text_id])
