@@ -4,7 +4,7 @@
 <div class="mee_login_text">
   <h1>Hi!</h1>
   <br></br>
-  <p>Thanks for stopping by to contribute your part and make a great impact!</p>
+  <p>Thanks for stopping by at meethodu to contribute your part and make a great impact!</p>
   <br></br>
   <p>This will really go a long way in proving how a small contribution from everyone can make a huge impact on someone's life</p>
   <br></br>
@@ -18,7 +18,7 @@
     <p id="error_notice"> <%= flash[:alert] %> </p>
   <% end %>
 
-  <%= form_tag do %>
+  <%= form_tag({:controller => "sessions" , :action => "create" } ,:method=>"post") do %>
     <fieldset>
       <br></br>
       <legend id="mee_legend"> Please Log In </legend>

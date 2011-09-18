@@ -6,9 +6,8 @@ Meethodu::Application.routes.draw do
   
   controller :sessions do
     get 'login' => :new
-    get '/' => :new
     post 'login' => :create
-    delete 'logout' => :destroy
+
   end
 
   controller :profile do
@@ -17,6 +16,7 @@ Meethodu::Application.routes.draw do
 
   controller :friendship_sent_requests do
     post 'add_friend' => :create
+    post 'friendship_sent_requests' => :create
     delete 'reject_friend' => :destroy
   end
 
@@ -36,6 +36,8 @@ Meethodu::Application.routes.draw do
   controller :donor_requests do
     post '/donor_requests/accept' => :accept
     post '/donor_requests/reject' => :reject
+    post '/donor_requests/yes_got_money' => :yes_got_money
+    post '/donor_requests/no_money' => :no_money
   end
   resources :donor_requests
 

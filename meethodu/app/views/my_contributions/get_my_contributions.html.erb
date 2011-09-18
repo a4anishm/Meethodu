@@ -9,22 +9,23 @@
       <legend id="mee_legend">My Contributions</legend>
       <table>
         <tr>
-          <th> Project Name  | </th>
-          <th> Project Sponsor  | </th>
-          <th> Amount you are willing to contribute  | </th>
-          <th> Sponsor accepted contribution?  | </th>
-          <th> Amount Sent?  | </th>
+          <th> Project Name  </th>
+          <th> Project Sponsor </th>
+          <th> Amount you are willing to contribute  </th>
+          <th> Sponsor accepted contribution?  </th>
+          <th> Amount Sent?  </th>
         </tr>
       <% @my_contributions.each do |in_contri| %>
 
         <tr class="<%= cycle('mee_line_odd', 'mee_line_even') %>" >
             <% @project=Project.find(in_contri.project_id) %>
-            <td><a href="/donor_requests/<%= in_contri.id%> "><%=  @project.name%></a></td>
+            <td><%=  link_to @project.name, @project%></td>
             <% @user=User.find_by_user_id(@project.user_id) %>
-            <td><a href="/donor_requests/<%= in_contri.id%> "> <%= @user.first_name%>,<%= @user.last_name%></a></td>
-            <td><a href="/donor_requests/<%= in_contri.id%> "> <%= in_contri.sent_money%></a></td>
-            <td><a href="/donor_requests/<%= in_contri.id%> "> <%= in_contri.receiver_accepted%></a></td>
-            <td><a href="/donor_requests/<%= in_contri.id%> "> <%= in_contri.sent%></a></td>
+            <td> <%= link_to "#{@user.first_name}, #{@user.last_name}" , @user %></td>
+            <td> <%= in_contri.sent_money%></td>
+            <td> <%= in_contri.receiver_accepted%></td>
+            <td> <%= in_contri.sent%></td>
+            <td><%= link_to 'Edit', edit_donor_request_path(in_contri) %></td>
 
           </tr>
 

@@ -10,6 +10,8 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       session[:user_text_id] = user.user_id
       session[:login_status] = 1
+      session[:first_name] = user.first_name
+      session[:last_name] = user.last_name
       params[:user_id] = user.id
       redirect_to profile_url
     else
@@ -18,6 +20,7 @@ class SessionsController < ApplicationController
 
 
   end
+
 
   def destroy
   end

@@ -23,22 +23,16 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
+
   <div class="field">
-    <%= f.label :minimum_budget %><br />
-    <%= f.text_field :minimum_budget %>
-  </div>
-  <div class="field">
-    <%= f.label :maximum_budget %><br />
+    <%= f.label :budget %><br />
     <%= f.text_field :maximum_budget %>
   </div>
   <div class="field">
-    <%= f.label :days_to_return_money %><br />
+    <%= f.label :Expected_number_of_days_in_which_you_will_return_money %><br />
     <%= f.text_field :days_to_return_money %>
   </div>
-  <div class="field">
-    <%= f.label :need_referral %><br />
-    <%= f.check_box :need_referral %>
-  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

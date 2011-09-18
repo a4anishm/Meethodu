@@ -1,41 +1,26 @@
 <% if flash[:notice] %>
-    <p id="error_notice"><%= flash[:notice] %></p>
+    <p id="info_notice"><%= flash[:notice] %></p>
 <% end %>
 <p>
-  <b>Project:</b>
-  <%= @donor_request.project_id %>
+  <b>Project Name:</b>
+  <% @project = Project.find_by_id(@donor_request.project_id) %>
+  <%= @project.name %>
 </p>
 
 <p>
-  <b>Sent:</b>
+  <b>Sponsored By:</b>
+  <% @project_sponsor = User.find_by_user_id(@project.user_id) %>
+  <%=  link_to "#{@project_sponsor.first_name}, #{@project_sponsor.last_name}", @project_sponsor %>
+</p>
+
+<p>
+  <b>Amount already sent?:</b>
   <%= @donor_request.sent %>
 </p>
 
-<p>
-  <b>Sent date:</b>
-  <%= @donor_request.sent_date %>
-</p>
+
 
 <p>
-  <b>Sent money:</b>
+  <b>Amount willing to send:</b>
   <%= @donor_request.sent_money %>
 </p>
-
-<p>
-  <b>seen_by_receiver:</b>
-  <%= @donor_request.seen_by_receiver %>
-</p>
-
-<p>
-  <b>seen_by_sender:</b>
-  <%= @donor_request.seen_by_sender %>
-</p>
-
-<p>
-  <b>Sent money:</b>
-  <%= @donor_request.sent_money %>
-</p>
-
-
-<%= link_to 'Edit', edit_donor_request_path(@donor_request) %> |
-<%= link_to 'Back', my_contributions_path %>

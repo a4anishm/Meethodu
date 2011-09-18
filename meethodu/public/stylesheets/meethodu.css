@@ -5,6 +5,29 @@
 	color: #FFFFFF;
 	text-align: center;
 }
+#mee_banner a img{
+        border-bottom: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        border-top: 0px;
+}
+#nav_banner{
+	background: #000000;
+	height: 20px;
+	font-size: 15px;
+        vertical-align: bottom;
+        vertical-align: bottom;
+        text-align: left;
+        font: 200%;
+}
+#nav_banner a{
+	margin-right: 20px;
+	font: small-caps;
+	color: #B5E61D;
+	float: right;
+}
+
+
 
 #mee_banner img{
 	float: left;
@@ -76,7 +99,7 @@
 }
 
 .mee_line_odd{
-	background: #B5E61D;
+	background: #DAFF68;
 }
 
 .mee_line_even{
@@ -143,7 +166,13 @@
 }
 
 #nav_links{
-    vertical-align: bottom;
-    text-align: right;
-    font: 200%;
+
+}
+
+
+#amount_percent_chart{
+    Color: red;
+    font-weight:  bold;
+    font:  500% sans-serif;
+
 }

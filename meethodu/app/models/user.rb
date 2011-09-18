@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
     
-    validates :first_name, :last_name, :gender, :address_line1, :address_line2, :city, :state, :zipcode, :user_id, :about_me, :interests, :presence => true
+    validates :first_name, :last_name, :user_id, :presence => true
     validates :user_id, :uniqueness => true
     validates :password, :confirmation => true
 

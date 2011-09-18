@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   # GET /users/1.xml
   def show
     @user = User.find(params[:id])
-
+    @friend_projects = Project.where("user_id = ?",@user.user_id)
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @user }
@@ -51,16 +51,23 @@ class UsersController < ApplicationController
   # POST /users.xml
   def create
     @user = User.new(params[:user])
+    if(params[:user[captcha] != 'upeckshin'])
+      render :action => "new" 
+      return
+    end
     respond_to do |format|
       if @user.save
         session[:login_status] = 1
         session[:user_id] = @user.id
         session[:user_text_id] = @user.user_id
-        format.html { redirect_to(@user, :notice => 'User was successfully created.') }
-        format.xml  { render :xml => @user, :status => :created, :location => @user }
+        session[:first_name] = @user.first_name
+        session[:last_name] = @user.last_name
+
+        format.html { redirect_to(profile_url, :alert => 'User was successfully created.') }
+
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+
       end
     end
   end
@@ -72,11 +79,11 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
-        format.xml  { head :ok }
+        format.html { redirect_to(profile_url, :alert => 'User was successfully updated.') }
+
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
+
       end
     end
   end

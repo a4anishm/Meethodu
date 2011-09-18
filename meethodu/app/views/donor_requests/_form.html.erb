@@ -13,14 +13,15 @@
 
   <div class="field">
     <% if @donor_request.receiver_accepted %>
-    <%= f.label :Your_sponsor_accepted_your_request_Did_you_already_send_money? %><br />
-    <%= f.check_box :sent %>
-    <% end %>
-  </div>
+      <% if @donor_request.sent == false %>
+        <%= f.label :Your_sponsor_accepted_your_request_Did_you_already_send_money? %><br />
+        <%= f.check_box :sent %>
+      <% end %>
+    <% else %>
 
-  <div class="field">
-    <%= f.label :Amount_Sent %><br />
+    <%= f.label :Amount_willing_to_send %><br />
     <%= f.text_field :sent_money %>
+    <% end %>
   </div>
   <div class="actions">
     <%= button_to('Update') %>

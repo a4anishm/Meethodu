@@ -6,7 +6,12 @@
 
 </div>
 
+<table width="100%" cellspacing="1" cellpadding="5" align="center" style="margin-top: 5px; margin-bottom: 5px;">
+<tr>
+<td width="35%" valign="top">
 
+<fieldset>
+<legend id="mee_legend">Profile</legend>
 <p>
   <b>First name:</b>
   <%= @user.first_name %>
@@ -62,5 +67,22 @@
   <b>Interests:</b>
   <%= @user.interests %>
 </p>
+</fieldset>
+</td>
 
-
+<td width="65%" valign="top">
+<fieldset>
+<legend id="mee_legend">Projects</legend>
+    <% if @friend_projects.empty? %>
+    <p>No Projects to display. Please add projects by links on top of this page</p>
+    <% else %>
+    <% @friend_projects.each do |friend_project|%>
+    <p><%= link_to "Name: #{friend_project.name}", friend_project%></p>
+    <p><%="Summary:  #{friend_project.summary}"%></p>
+    <br></br>
+    <% end %>
+    <% end %>
+</fieldset>
+</td>
+</tr>
+</table>

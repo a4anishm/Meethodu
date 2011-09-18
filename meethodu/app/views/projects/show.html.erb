@@ -2,15 +2,21 @@
     <p id="info_notice"><%= flash[:notice] %></p>
 <% end %>
 
-<table cellspacing="1" cellpadding="5" align="center" style="margin-top: 5px; margin-bottom: 5px;">
+<table cellspacing="1" cellpadding="5" align="center" width="100%" style="margin-top: 5px; margin-bottom: 5px;">
 <tr>
-  <td width="75%" valign="top">
-
+  <td width="75%" valign="top" align="left">
+<fieldset>
+<legend id="mee_legend"> Project details</legend>
 <p>
   <b>Name:</b>
   <%= @project.name %>
 </p>
 
+<p>
+  <b>Sponsored By:</b>
+  <% @project_sponsor = User.find_by_user_id(@project.user_id) %>
+  <%=  link_to "#{@project_sponsor.first_name}, #{@project_sponsor.last_name}", @project_sponsor %>
+</p>
 <p>
   <b>Summary:</b>
   <%= @project.summary %>
@@ -21,13 +27,10 @@
   <%= @project.description %>
 </p>
 
-<p>
-  <b>Minimum budget:</b>
-  <%= @project.minimum_budget %>
-</p>
+
 
 <p>
-  <b>Maximum budget:</b>
+  <b>Budget:</b>
   <%= @project.maximum_budget %>
 </p>
 
@@ -36,13 +39,13 @@
   <%= @project.days_to_return_money %>
 </p>
 
-<p>
-  <b>Need referral:</b>
-  <%= @project.need_referral %>
-</p>
+</fieldset>
 </td>
 
-<td valign="top">
+<td valign="top" width="25%" align="left">
+<% if(@project.user_id != session[:user_text_id]) %>
+
+
 
 <div class="donate_box">
 
@@ -50,6 +53,9 @@
     <fieldset>
       <legend id="mee_legend"> Give a loan to this project</legend>
 
+      <% if session[:user_id] == 0 %>
+        <%= 'Please' %> <%=  link_to 'Sign Up', new_user_path %><%= ' to give a loan to this project!' %>
+      <% else %>
       <div>
         <%= label_tag(:How_much_amount_will_you_loan_to_this_project?) %>
         <%= text_field_tag(:loan_amount) %>
@@ -59,16 +65,26 @@
       <div>
         <%= button_to('Contribute!') %>
       </div>
+      <% end %>
     </fieldset>
   <% end %>
 
 </div>
+<%end %>
 
-</td>
 
+<div class="donate_box">
+    <fieldset>
+      <legend id="mee_legend"> Project Funding Status</legend>
+      <p>Amount Raised: </p>
+      <div id="amount_percent_chart"> <%=  @amount_raised %></div>
+      <p>Amount Needed:</p><div id="amount_percent_chart"> <%= @project.maximum_budget%> </div>
+
+    </fieldset>
+
+</div>
+  </td>
 </tr>
 </table>
 
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>

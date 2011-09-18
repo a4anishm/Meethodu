@@ -45,8 +45,10 @@ class DonorRequestsController < ApplicationController
     @donor_request.sent_user_id = session[:user_text_id]
     @donor_request.sent_date = Time.now
     @donor_request.sent_money = params[:loan_amount]
+    @donor_request.receiver_accepted = false
     @donor_request.seen_by_receiver = false
     @donor_request.seen_by_sender = false
+    @donor_request.sponsor_received_money = false
     @donor_request.sent = false
 
     respond_to do |format|
@@ -67,7 +69,7 @@ class DonorRequestsController < ApplicationController
 
     respond_to do |format|
       if @donor_request.update_attributes(params[:donor_request])
-        format.html { redirect_to(@donor_request, :notice => 'Donor request was successfully updated.') }
+        format.html { redirect_to(@donor_request, :notice => 'Your contribution was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -101,6 +103,32 @@ class DonorRequestsController < ApplicationController
         @donor_request = DonorRequest.find(params[:id])
         @donor_request.receiver_accepted = false
         @donor_request.seen_by_receiver = true
+        if @donor_request.save
+          redirect_to(profile_path)
+        end
+  end
+
+  def yes_got_money
+        @donor_request = DonorRequest.find(params[:id])
+        @donor_request.sponsor_received_money = true
+        @donor_request.save
+
+        @project_funding = ProjectFunding.new
+        @project_funding.donor_id = @donor_request.sent_user_id
+        @project_funding.funding_date = Time.now
+        @project_funding.receiver_id = session[:user_text_id]
+        @project_funding.funding_money = @donor_request.sent_money
+        @project_funding.project_id = @donor_request.project_id
+        if @project_funding.save
+          redirect_to(profile_path)
+        end
+        
+  end
+
+  def no_money
+        @donor_request = DonorRequest.find(params[:id])
+        @donor_request.sent = false
+
         if @donor_request.save
           redirect_to(profile_path)
         end

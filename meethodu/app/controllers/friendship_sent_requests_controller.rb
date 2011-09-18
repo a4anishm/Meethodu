@@ -28,7 +28,6 @@ class FriendshipSentRequestsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @friendship_sent_request }
     end
   end
 
@@ -41,6 +40,28 @@ class FriendshipSentRequestsController < ApplicationController
   # POST /friendship_sent_requests.xml
   def create
     @friendship_sent_request = FriendshipSentRequest.new
+    @to_user= User.find_by_user_id(params[:friend_request_user_field_id])
+    if(!@to_user )
+         redirect_to(profile_path, :alert => "Userid you entered is wrong. You entered: #{params[:friend_request_user_field_id]}")
+         return
+    end
+    if((session[:user_text_id] == params[:friend_request_user_field_id]) )
+          redirect_to(profile_path, :alert => "Sorry! But You entered your own userid :)")
+          return
+    end
+
+    @existing_request = FriendshipSentRequest.find_by_from_user_and_to_user(session[:user_text_id],params[:friend_request_user_field_id])
+    if(@existing_request)
+         redirect_to(profile_path, :alert => "Please be patient. You already sent a friend request to: #{params[:friend_request_user_field_id]}")
+         return
+    end
+
+    @already_friends = Friendship.find_by_friend1_id_and_friend2_id(session[:user_text_id],params[:friend_request_user_field_id])
+    if(@already_friends)
+         redirect_to(profile_path, :alert => "Funny! No friendship request sent. You are already friends with: #{params[:friend_request_user_field_id]}")
+         return
+    end
+
     @friendship_sent_request.from_user = session[:user_text_id]
     @friendship_sent_request.to_user = params[:friend_request_user_field_id]
     @friendship_sent_request.message = params[:friend_request_message_field_id]
@@ -48,11 +69,11 @@ class FriendshipSentRequestsController < ApplicationController
 
     respond_to do |format|
       if @friendship_sent_request.save
-        format.html { redirect_to(:back, :alert => "Your friendship request was successfully sent to #{params[:friend_request_user_field_id]}") }
-        format.xml  { render :xml => @friendship_sent_request, :status => :created, :location => @friendship_sent_request }
+        format.html { redirect_to(profile_path, :alert => "Your friendship request was successfully sent to #{params[:friend_request_user_field_id]}") }
+
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @friendship_sent_request.errors, :status => :unprocessable_entity }
+        format.html { redirect_to(profile_path, :alert => "Errors occured in sending friendhsip request. Did you enter introduction message?") }
+
       end
     end
   end
@@ -64,11 +85,11 @@ class FriendshipSentRequestsController < ApplicationController
 
     respond_to do |format|
       if @friendship_sent_request.update_attributes(params[:friendship_sent_request])
-        format.html { redirect_to(@friendship_sent_request, :notice => 'Friendship sent request was successfully updated.') }
-        format.xml  { head :ok }
+        format.html { redirect_to(profile_url, :notice => 'Friendship sent request was successfully updated.') }
+
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @friendship_sent_request.errors, :status => :unprocessable_entity }
+
       end
     end
   end
